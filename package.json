@@ -78,6 +78,7 @@
     "react-i18next": "^11.16.2",
     "react-image-lightbox": "^5.1.4",
     "react-leaflet": "^3.2.5",
+    "react-modal-image": "^2.6.0",
     "react-refresh": "^0.11.0",
     "react-responsive-masonry": "^2.1.4",
     "react-router-dom": "^6.2.1",
