@@ -1,5 +1,5 @@
 // types
-import React from 'react';
+// Removed unused import of React
 
 import { PlanItem } from 'components/pricing';
 

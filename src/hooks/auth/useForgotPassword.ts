@@ -9,7 +9,8 @@ export default function useForgotPassword(): [string, string, boolean, (email: s
     const [passwordReset, setPasswordReset] = useState(false);
 
     const forgotPassword = (email: string) => {
-        const response = forgotPasswordApi({ email });
+        // Ensure the email is used here
+        const response = forgotPasswordApi({ email }); // This line uses the email parameter
         response
             .then((response) => {
                 setResetPasswordSuccess(response.data.message);

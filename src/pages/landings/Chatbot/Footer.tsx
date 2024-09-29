@@ -73,7 +73,7 @@ const Footer = () => {
                                             pill
                                             bg=""
                                             className="align-middle badge-soft-info fw-normal fs-11 px-2 py-1 ms-1">
-                                            We're hiring
+                                            We&apos;re hiring
                                         </Badge>
                                     </Link>
                                 </li>
