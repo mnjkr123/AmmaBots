@@ -1,10 +1,10 @@
-// next.config.ts
-import { NextConfig } from 'next';
+// next.config.js
 import NodePolyfillPlugin from 'node-polyfill-webpack-plugin';
 import withSvgr from 'next-svgr';
 
-const config: NextConfig = withSvgr({
+export default withSvgr({
     webpack: (config) => {
+        // Ensure fallback for certain Node.js core modules
         config.resolve.fallback = {
             ...config.resolve.fallback,
             buffer: require.resolve('buffer/'),
@@ -12,15 +12,14 @@ const config: NextConfig = withSvgr({
             https: require.resolve('https-browserify'),
             querystring: require.resolve('querystring-es3'),
             stream: require.resolve('stream-browserify'),
-            net: false,
-            tls: false,
-            child_process: false,
+            net: false, // Disable 'net' module
+            tls: false, // Disable 'tls' module
+            child_process: false, // Disable 'child_process' module
         };
 
+        // Add the NodePolyfillPlugin to the webpack plugins
         config.plugins.push(new NodePolyfillPlugin());
 
         return config;
     },
 });
-
-export default config;
