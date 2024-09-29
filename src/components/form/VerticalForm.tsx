@@ -1,7 +1,8 @@
 import React from 'react';
-import { useForm, Resolver, SubmitHandler, DefaultValues } from 'react-hook-form';
+import { useForm, Resolver, SubmitHandler, DefaultValues, FieldValues } from 'react-hook-form';
 
-type VerticalFromProps<TFormValues> = {
+// Ensure TFormValues extends FieldValues
+type VerticalFormProps<TFormValues extends FieldValues> = {
     defaultValues?: DefaultValues<TFormValues>;
     resolver?: Resolver<TFormValues>;
     children?: React.ReactNode;
@@ -9,13 +10,13 @@ type VerticalFromProps<TFormValues> = {
     formClass?: string;
 };
 
-const VerticalForm = <TFormValues extends Record<string, any> = Record<string, any>>({
+const VerticalForm = <TFormValues extends FieldValues>({
     defaultValues,
     resolver,
     children,
     onSubmit,
     formClass,
-}: VerticalFromProps<TFormValues>) => {
+}: VerticalFormProps<TFormValues>) => {
     /*
      * form methods
      */

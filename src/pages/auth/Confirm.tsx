@@ -3,9 +3,10 @@ import { Card, Col, Container, Row } from 'react-bootstrap';
 import { useTranslation } from 'react-i18next';
 import { useEffect } from 'react';
 
-// images
+// Images
 import logo from '../../assets/images/logo.png';
 
+// SVG Component for MailOpened
 const MailOpened = () => {
     return (
         <svg width="24px" height="24px" viewBox="0 0 98 98" version="1.1" xmlns="http://www.w3.org/2000/svg">
@@ -19,10 +20,13 @@ const Confirm = () => {
 
     // Get the user's email from sessionStorage
     const userEmail = sessionStorage.getItem('signupEmail');
+
+    // Log the email to the console (optional, for debugging)
     console.log('User email:', userEmail); // This should now log the email
 
-    // Clear the email from sessionStorage
+    // Clear the email from sessionStorage on component unmount
     useEffect(() => {
+        // Cleanup function to remove email from sessionStorage
         return () => {
             sessionStorage.removeItem('signupEmail');
         };
@@ -51,7 +55,7 @@ const Confirm = () => {
 
                                     <p className="text-muted mb-4">
                                         {t('We sent a confirmation link to you at: ')}
-                                        <span className="text-dark fw-medium">{userEmail}</span>
+                                        <span className="text-dark fw-medium">{userEmail || 'N/A'}</span>
                                     </p>
 
                                     <p className="text-muted mb-0 fs-13">

@@ -1,6 +1,5 @@
 import React, { InputHTMLAttributes } from 'react';
 import { Form, InputGroup } from 'react-bootstrap';
-
 import { FieldErrors, Control } from 'react-hook-form';
 
 interface FormInputProps extends InputHTMLAttributes<HTMLInputElement> {
@@ -22,7 +21,7 @@ interface FormInputProps extends InputHTMLAttributes<HTMLInputElement> {
     rows?: string | number;
 }
 
-// textual form-controls—like inputs, passwords, textareas etc.
+// Textual form-controls—like inputs, passwords, textareas etc.
 const TextualInput = ({
     type,
     name,
@@ -47,22 +46,21 @@ const TextualInput = ({
                     if (refCallback) refCallback(r);
                 }}
                 className={className}
-                isInvalid={errors && errors[name] ? true : false}
+                isInvalid={!!(errors && errors[name])}
                 {...(register ? register(name) : {})}
                 rows={rows}
-                {...otherProps}
-            ></Form.Control>
+                {...otherProps}></Form.Control>
 
-            {errors && errors[name] && (
+            {errors && errors[name]?.message && (
                 <Form.Control.Feedback type="invalid" className="d-block">
-                    {errors[name]['message']}
+                    {errors[name]?.message}
                 </Form.Control.Feedback>
             )}
         </>
     );
 };
 
-// non-textual checkbox and radio controls
+// Non-textual checkbox and radio controls
 const CheckInput = ({
     type,
     label,
@@ -87,19 +85,19 @@ const CheckInput = ({
                     if (refCallback) refCallback(r);
                 }}
                 className={className}
-                isInvalid={errors && errors[name] ? true : false}
+                isInvalid={!!(errors && errors[name])}
                 {...(register ? register(name) : {})}
                 {...otherProps}
             />
 
-            {errors && errors[name] && (
-                <Form.Control.Feedback type="invalid">{errors[name]['message']}</Form.Control.Feedback>
+            {errors && errors[name]?.message && (
+                <Form.Control.Feedback type="invalid">{errors[name]?.message}</Form.Control.Feedback>
             )}
         </>
     );
 };
 
-// handle select controls
+// Handle select controls
 const SelectInput = ({
     type,
     label,
@@ -124,19 +122,19 @@ const SelectInput = ({
                     if (refCallback) refCallback(r);
                 }}
                 className={className}
-                isInvalid={errors && errors[name] ? true : false}
+                isInvalid={!!(errors && errors[name])}
                 {...(register ? register(name) : {})}
                 {...otherProps}
             />
 
-            {errors && errors[name] && (
-                <Form.Control.Feedback type="invalid">{errors[name]['message']}</Form.Control.Feedback>
+            {errors && errors[name]?.message && (
+                <Form.Control.Feedback type="invalid">{errors[name]?.message}</Form.Control.Feedback>
             )}
         </>
     );
 };
 
-// extend textual form-controls with add-ons
+// Extend textual form-controls with add-ons
 const FormInputGroup = ({
     startIcon,
     type,
@@ -203,7 +201,7 @@ const FormInput = ({
     rows,
     ...otherProps
 }: FormInputProps) => {
-    // handle input type
+    // Handle input type
     const comp = type === 'textarea' ? 'textarea' : type === 'select' ? 'select' : 'input';
 
     return (

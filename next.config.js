@@ -1,7 +1,9 @@
 const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
+const withSvgr = require('next-svgr');
 
-module.exports = {
+module.exports = withSvgr({
     webpack: (config) => {
+        // Ensure fallback for certain Node.js core modules
         config.resolve.fallback = {
             ...config.resolve.fallback,
             buffer: require.resolve('buffer/'),
@@ -19,4 +21,4 @@ module.exports = {
 
         return config;
     },
-};
+});

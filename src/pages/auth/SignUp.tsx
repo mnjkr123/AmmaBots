@@ -5,10 +5,10 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import { useTranslation } from 'react-i18next';
 import FeatherIcon from 'feather-icons-react';
 import { useState } from 'react';
-import { supabase } from '../../helpers/supabaseClient'; // Update the path based on the location
+import { supabase } from '../../helpers/supabaseClient'; // Ensure the path is correct
 import { VerticalForm, FormInput } from '../../components/form';
 import AuthLayout from './AuthLayout';
-import { toast } from 'react-toastify'; // Import toast for notifications
+import { toast } from 'react-toastify'; // For notifications
 
 type UserData = {
     exampleName: string;
@@ -22,6 +22,7 @@ const SignUp = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [formSubmitted, setFormSubmitted] = useState(false);
 
+    // Schema validation using Yup
     const schemaResolver = yupResolver(
         yup.object().shape({
             exampleName: yup.string().required(t('Please enter Name')),
@@ -41,9 +42,7 @@ const SignUp = () => {
                 password: formData.password,
             });
 
-            if (signupError) {
-                throw signupError;
-            }
+            if (signupError) throw signupError;
 
             const user = data?.user;
 
@@ -65,20 +64,20 @@ const SignUp = () => {
                 console.warn('User ID is not available immediately after signup. Skipping profile update.');
             }
 
-            // Store the email in sessionStorage
+            // Store the email in sessionStorage for confirmation
             sessionStorage.setItem('signupEmail', formData.email);
             console.log('Stored email in sessionStorage:', formData.email); // Debug log
 
-            // Inform user to check their email for verification
-            toast.success('Please check your email for verification.');
+            // Notify the user to check their email for verification
+            toast.success(t('Please check your email for verification.'));
 
-            // Clear form fields
+            // Indicate form has been submitted successfully
             setFormSubmitted(true);
         } catch (error) {
             console.error('Error during registration:', error);
             setError(`Error: ${(error as Error).message}`);
         } finally {
-            setIsSubmitting(false);
+            setIsSubmitting(false); // Reset the submitting state
         }
     };
 
