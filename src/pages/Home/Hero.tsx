@@ -25,9 +25,11 @@ const SwiperSlider = () => {
         roundLengths: true,
     };
 
+    const images = [saas1, saas2, saas3];
+
     return (
         <Swiper modules={[Autoplay]} {...swiperConfig}>
-            {([saas1, saas2, saas3] || []).map((img, index) => {
+            {images.map((img, index) => {
                 return (
                     <SwiperSlide key={index.toString()}>
                         <img src={img} alt="" className="img-fluid rounded-lg" />
