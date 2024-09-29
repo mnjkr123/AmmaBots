@@ -14,14 +14,13 @@ const AosAnimation = () => {
 
                         <div className="py-3">
                             <Row>
-                                {(['up', 'left'] || []).map((direction, index) => {
+                                {['up', 'left'].map((direction, index) => {
                                     return (
                                         <Col xxl={3} xl={4} md={6} key={index.toString()}>
                                             <div
                                                 className="border rounded p-3 mb-2 mb-xl-0"
                                                 data-aos={'fade-' + direction}
-                                                data-aos-duration={(index + 1) * 1000}
-                                            >
+                                                data-aos-duration={(index + 1) * 1000}>
                                                 <span className="bg-soft-primary avatar avatar-sm rounded-lg icon icon-with-bg icon-xs text-primary">
                                                     <FeatherIcon icon="mail" className="icon-dual-primary" />
                                                 </span>
