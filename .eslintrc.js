@@ -2,14 +2,13 @@ module.exports = {
     env: {
         browser: true,
         es2021: true,
-        node: true,
     },
     extends: [
         'eslint:recommended',
         'plugin:react/recommended',
-        'plugin:@next/next/recommended', // Add Next.js ESLint plugin
+        'plugin:@typescript-eslint/recommended', // If you're using TypeScript
     ],
-    parser: '@typescript-eslint/parser', // Use the TypeScript parser
+    parser: '@typescript-eslint/parser', // If you're using TypeScript
     parserOptions: {
         ecmaFeatures: {
             jsx: true,
@@ -17,9 +16,16 @@ module.exports = {
         ecmaVersion: 12,
         sourceType: 'module',
     },
-    plugins: ['react', '@typescript-eslint'],
+    plugins: [
+        'react',
+        '@typescript-eslint', // If you're using TypeScript
+    ],
+    settings: {
+        react: {
+            version: 'detect',
+        },
+    },
     rules: {
-        // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
-        // e.g. "react/react-in-jsx-scope": "off"
+        // Your custom rules
     },
 };
