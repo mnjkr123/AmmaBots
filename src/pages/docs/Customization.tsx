@@ -30,8 +30,8 @@ const Customization = () => {
 
                                 <p className="mb-1">
                                     You can easily modify the themes by simply changing few variables. You even don't
-                                    need to change anything in Prompt's source code. You can easily defined the override
-                                    variables in <code>src/assets/scss/skins/default</code>.
+                                    need to change anything in Prompt&apos;s source code. You can easily defined the
+                                    override variables in <code>src/assets/scss/skins/default</code>.
                                 </p>
 
                                 <p>

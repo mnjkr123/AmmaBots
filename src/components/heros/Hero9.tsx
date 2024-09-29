@@ -27,7 +27,7 @@ const Hero9 = () => {
             <div className="position-relative">
                 <div className="hero-cta">
                     <Button variant="info" className="btn-cta">
-                        Let's Have Talk
+                        Let&apos;s Have Talk
                     </Button>
                 </div>
             </div>

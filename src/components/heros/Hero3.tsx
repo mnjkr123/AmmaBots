@@ -19,7 +19,7 @@ const Hero3 = () => {
                             <span>Hola!</span> I am Greeva N.
                         </h4>
 
-                        <h1 className="hero-title">I'm a freelance UX/UI Designer.</h1>
+                        <h1 className="hero-title">I&apos;m a freelance UX/UI Designer.</h1>
                         <p className="mt-3 fs-16 text-secondary">
                             A top-notch web designer helping business to craft their meaningful and interactive product
                             experiences

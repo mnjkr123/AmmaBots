@@ -22,8 +22,8 @@ const CTA = () => {
                             <Card.Body>
                                 <h3 className="mt-0 fw-semibold">Get in touch</h3>
                                 <p>
-                                    Get in touch with our professional business development team and they'll answer your
-                                    question shortly
+                                    Get in touch with our professional business development team and they&apos;ll answer
+                                    your question shortly
                                 </p>
                                 <Link to="/pages/contact" className="btn btn-outline-primary mt-4">
                                     Contact Us

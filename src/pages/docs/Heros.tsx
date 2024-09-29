@@ -29,10 +29,19 @@ const Heros = () => {
                                         There are 12 different options available in Prompt at the moment. You could use
                                         any based on your need. You can explore it at <code>src/components/heros</code>.
                                     </p>
-                                    <p>You can easily use by following :</p>
+                                    <p>You can easily use by following:</p>
                                     <p className="mb-0">
                                         <code>import {'{ Hero10 }'} from './components/heros';</code> <br />
                                         <code>&lt;Hero10 /&gt;</code>
+                                    </p>
+                                    {/* Escape the apostrophes in the next lines */}
+                                    <p>
+                                        You can easily customize it based on your need. Just remember to check the
+                                        available props to get the most out of it.
+                                    </p>
+                                    <p>
+                                        For example, in <code>Hero10</code>, you can pass different props to change its
+                                        appearance.
                                     </p>
                                 </div>
                             </Card.Body>

@@ -37,8 +37,8 @@ const Hero5 = () => {
                         </h1>
 
                         <p className="mt-4 fs-18 mb-3 mb-sm-6 w-75">
-                            We're a top-notch web design and development team helping business to craft the meaningful
-                            and interactive product experiences.
+                            We&apos;re a top-notch web design and development team helping business to craft the
+                            meaningful and interactive product experiences.
                         </p>
 
                         <Link to="#" className="btn btn-secondary">

@@ -14,7 +14,7 @@ const Footer = () => {
                     <Col>
                         <div className="text-center">
                             <h1 className="text-dark">Be the first to know!</h1>
-                            <p>We'll inform you about new updates, features, but no spam, we promise.</p>
+                            <p>We&apos;ll inform you about new updates, features, but no spam, we promise.</p>
                         </div>
                         <div className="my-4 my-sm-5 pt-0 d-flex align-items-center justify-content-center">
                             <Row className="g-2">
