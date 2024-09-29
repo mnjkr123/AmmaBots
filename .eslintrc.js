@@ -2,29 +2,15 @@ module.exports = {
     env: {
         browser: true,
         es2021: true,
+        node: true, // Add this line
     },
-    extends: [
-        'eslint:recommended',
-        'plugin:react/recommended',
-        'plugin:@typescript-eslint/recommended', // If you're using TypeScript
-    ],
-    parser: '@typescript-eslint/parser', // If you're using TypeScript
+    extends: ['eslint:recommended', 'plugin:@typescript-eslint/recommended'],
+    parser: '@typescript-eslint/parser',
     parserOptions: {
-        ecmaFeatures: {
-            jsx: true,
-        },
         ecmaVersion: 12,
         sourceType: 'module',
     },
-    plugins: [
-        'react',
-        '@typescript-eslint', // If you're using TypeScript
-    ],
-    settings: {
-        react: {
-            version: 'detect',
-        },
-    },
+    plugins: ['@typescript-eslint'],
     rules: {
         // Your custom rules
     },
