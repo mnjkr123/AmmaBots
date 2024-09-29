@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Col, Container, Row } from 'react-bootstrap';
 
@@ -36,8 +37,7 @@ const Hero3 = () => {
                         <div
                             className="img-container text-center text-lg-end"
                             data-aos="fade-up"
-                            data-aos-duration="500"
-                        >
+                            data-aos-duration="500">
                             <img src={portfolio1} alt="Hero" className="img-fluid" />
                         </div>
                     </Col>

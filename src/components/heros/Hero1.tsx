@@ -1,3 +1,4 @@
+import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import FeatherIcon from 'feather-icons-react';
@@ -35,8 +36,7 @@ const SwiperSlider = () => {
         <Swiper
             // install Swiper modules
             modules={[Autoplay]}
-            {...swiperConfig}
-        >
+            {...swiperConfig}>
             {(slides || []).map((slide, index) => {
                 return (
                     <SwiperSlide key={index.toString()}>

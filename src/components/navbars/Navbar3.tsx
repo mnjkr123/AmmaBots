@@ -1,3 +1,4 @@
+import React from 'react';
 import { useEffect } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { NavLink, Link } from 'react-router-dom';
@@ -51,8 +52,7 @@ const Navbar3 = ({ isSticky, navClass, buttonClass, fixedWidth }: Navbar3Props) 
                 id={isSticky ? 'sticky' : ''}
                 collapseOnSelect
                 expand="lg"
-                className={classNames('topnav-menu', navClass)}
-            >
+                className={classNames('topnav-menu', navClass)}>
                 <Container fluid={!fixedWidth}>
                     <Navbar.Brand href="/">
                         <img src={logo} height="30" className="d-inline-block align-top" alt="" />
@@ -65,8 +65,7 @@ const Navbar3 = ({ isSticky, navClass, buttonClass, fixedWidth }: Navbar3Props) 
                                 <Nav.Item as="li">
                                     <NavLink
                                         to="/auth/logout"
-                                        className="btn btn-sm me-2 fw-medium fs-15 shadow-none text-dark"
-                                    >
+                                        className="btn btn-sm me-2 fw-medium fs-15 shadow-none text-dark">
                                         Logout
                                     </NavLink>
                                 </Nav.Item>
@@ -74,8 +73,7 @@ const Navbar3 = ({ isSticky, navClass, buttonClass, fixedWidth }: Navbar3Props) 
                                 <Nav.Item as="li">
                                     <NavLink
                                         to="/auth/login"
-                                        className="btn btn-sm me-2 fw-medium fs-15 shadow-none text-dark"
-                                    >
+                                        className="btn btn-sm me-2 fw-medium fs-15 shadow-none text-dark">
                                         Log In
                                     </NavLink>
                                 </Nav.Item>
@@ -83,8 +81,7 @@ const Navbar3 = ({ isSticky, navClass, buttonClass, fixedWidth }: Navbar3Props) 
                             <Nav.Item as="li">
                                 <Link
                                     to="#"
-                                    className={classNames('btn', buttonClass ? buttonClass : 'btn-soft-primary')}
-                                >
+                                    className={classNames('btn', buttonClass ? buttonClass : 'btn-soft-primary')}>
                                     Download
                                 </Link>
                             </Nav.Item>

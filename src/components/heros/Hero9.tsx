@@ -1,3 +1,4 @@
+import React from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import { ParallaxBanner, ParallaxProvider } from 'react-scroll-parallax';
 
@@ -34,8 +35,7 @@ const Hero9 = () => {
                 <ParallaxProvider>
                     <ParallaxBanner
                         layers={[{ image: coworking, speed: -55, style: { backgroundSize: 'contain' } }]}
-                        className="hero-image"
-                    ></ParallaxBanner>
+                        className="hero-image"></ParallaxBanner>
                 </ParallaxProvider>
             </div>
         </section>

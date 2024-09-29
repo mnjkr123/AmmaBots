@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Card, Col, Row } from 'react-bootstrap';
 import FeatherIcon from 'feather-icons-react';
@@ -23,8 +24,7 @@ const PricingCards1 = ({ plans, containerClass, hasAnimation }: PricingCardProps
                             {...(hasAnimation && {
                                 'data-aos': 'fade-up',
                                 'data-aos-duration': (index + (7 + index)) * 100,
-                            })}
-                        >
+                            })}>
                             <Card.Body className="text-center">
                                 {plan.isPopular && (
                                     <span className="ribbon2 bg-primary text-white shadow">Popular</span>
@@ -59,8 +59,7 @@ const PricingCards1 = ({ plans, containerClass, hasAnimation }: PricingCardProps
                                         'btn',
                                         plan.isRecommended ? 'btn-primary' : 'btn-soft-primary',
                                         'd-block'
-                                    )}
-                                >
+                                    )}>
                                     Purchase Now
                                 </Link>
                             </Card.Body>

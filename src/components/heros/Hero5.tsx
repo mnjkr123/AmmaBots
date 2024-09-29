@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Badge, Col, Container, Row } from 'react-bootstrap';
 import FeatherIcon from 'feather-icons-react';
@@ -15,8 +16,7 @@ const Hero5 = () => {
                         <div
                             className="rounded d-inline-block mb-4 px-3 py-2 alert bg-soft-warning"
                             data-aos="fade-right"
-                            data-aos-duration="1000"
-                        >
+                            data-aos-duration="1000">
                             <Link to="#">
                                 <div className="d-flex align-items-center">
                                     <Badge pill bg="orange" className="px-2 py-1">
@@ -69,14 +69,12 @@ const Hero5 = () => {
                     height="40px"
                     viewBox="0 0 1440 40"
                     version="1.1"
-                    xmlns="http://www.w3.org/2000/svg"
-                >
+                    xmlns="http://www.w3.org/2000/svg">
                     <g id="shape-b" stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
                         <g id="curve" fill="#fff">
                             <path
                                 d="M0,30.013 C239.659,10.004 479.143,0 718.453,0 C957.763,0 1198.28,10.004 1440,30.013 L1440,40 L0,40 L0,30.013 Z"
-                                id="Path"
-                            ></path>
+                                id="Path"></path>
                         </g>
                     </g>
                 </svg>

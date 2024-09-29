@@ -1,4 +1,5 @@
 // slider
+import React from 'react';
 import { Pagination, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -33,8 +34,7 @@ const SwiperSlider1 = ({ slides }: SwiperSliderProps) => {
         <Swiper
             // install Swiper modules
             modules={[Pagination, Autoplay]}
-            {...swiperConfig}
-        >
+            {...swiperConfig}>
             {(slides || []).map((slide, index) => {
                 return (
                     <SwiperSlide key={index.toString()}>

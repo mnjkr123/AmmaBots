@@ -1,3 +1,4 @@
+import React from 'react';
 import FeatherIcon from 'feather-icons-react';
 import { Card } from 'react-bootstrap';
 import { Autoplay, Navigation, Pagination } from 'swiper';
@@ -45,24 +46,19 @@ const SwiperSlider4 = ({ slides }: SwiperSliderProps) => {
                                     <div className="align-self-center">
                                         <FeatherIcon
                                             icon="star"
-                                            className="icon icon-xxs icon-fill-warning text-warning"
-                                        ></FeatherIcon>
+                                            className="icon icon-xxs icon-fill-warning text-warning"></FeatherIcon>
                                         <FeatherIcon
                                             icon="star"
-                                            className="icon icon-xxs icon-fill-warning text-warning"
-                                        ></FeatherIcon>
+                                            className="icon icon-xxs icon-fill-warning text-warning"></FeatherIcon>
                                         <FeatherIcon
                                             icon="star"
-                                            className="icon icon-xxs icon-fill-warning text-warning"
-                                        ></FeatherIcon>
+                                            className="icon icon-xxs icon-fill-warning text-warning"></FeatherIcon>
                                         <FeatherIcon
                                             icon="star"
-                                            className="icon icon-xxs icon-fill-warning text-warning"
-                                        ></FeatherIcon>
+                                            className="icon icon-xxs icon-fill-warning text-warning"></FeatherIcon>
                                         <FeatherIcon
                                             icon="star"
-                                            className="icon icon-xxs icon-fill-warning text-warning"
-                                        ></FeatherIcon>
+                                            className="icon icon-xxs icon-fill-warning text-warning"></FeatherIcon>
                                     </div>
                                 </div>
                             </Card.Body>

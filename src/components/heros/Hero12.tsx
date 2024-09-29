@@ -1,3 +1,4 @@
+import React from 'react';
 import { Col, Container, Row, Button } from 'react-bootstrap';
 import FeatherIcon from 'feather-icons-react';
 
@@ -43,15 +44,13 @@ const Hero12 = () => {
                                 <div className="me-4">
                                     <FeatherIcon
                                         icon="check"
-                                        className="icon icon-dual-success icon-xs me-1"
-                                    ></FeatherIcon>
+                                        className="icon icon-dual-success icon-xs me-1"></FeatherIcon>
                                     Free 14-day Demo
                                 </div>
                                 <div>
                                     <FeatherIcon
                                         icon="check"
-                                        className="icon icon-dual-success icon-xs me-1"
-                                    ></FeatherIcon>
+                                        className="icon icon-dual-success icon-xs me-1"></FeatherIcon>
                                     No credit card needed
                                 </div>
                             </div>

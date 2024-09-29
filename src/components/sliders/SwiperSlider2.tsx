@@ -1,3 +1,4 @@
+import React from 'react';
 import { Card } from 'react-bootstrap';
 import { Autoplay, Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -34,8 +35,7 @@ const SwiperSlider2 = ({ slides, hasLogo }: SwiperSliderProps) => {
         <Swiper
             // install Swiper modules
             modules={[Navigation, Autoplay]}
-            {...swiperConfig}
-        >
+            {...swiperConfig}>
             {(slides || []).map((slide, index) => {
                 return (
                     <SwiperSlide key={index.toString()}>

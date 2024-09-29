@@ -1,5 +1,6 @@
-import { Link } from 'react-router-dom'
-import { Button, Col, Container, Row } from 'react-bootstrap'
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { Button, Col, Container, Row } from 'react-bootstrap';
 
 // components
 import { FormInput } from '../form';
@@ -15,10 +16,16 @@ const Hero6 = () => {
                 <div className="shape2"></div>
             </div>
             <Container>
-                <Row className='align-items-center text-center text-sm-start'>
+                <Row className="align-items-center text-center text-sm-start">
                     <Col lg={5}>
-                        <h1 className="mt-3 mb-4 pb-2 hero-title">Discover the true power of <span className="highlight highlight-orange d-inline-block">Learning</span>.</h1>
-                        <p className="fs-18 text-muted hero-sub-title">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti dolores.</p>
+                        <h1 className="mt-3 mb-4 pb-2 hero-title">
+                            Discover the true power of{' '}
+                            <span className="highlight highlight-orange d-inline-block">Learning</span>.
+                        </h1>
+                        <p className="fs-18 text-muted hero-sub-title">
+                            At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+                            voluptatum deleniti atque corrupti dolores.
+                        </p>
                         <div className="pt-4">
                             <Row className="g-2 text-start">
                                 <Col md={4} lg={6}>
@@ -49,7 +56,7 @@ const Hero6 = () => {
                 </Row>
             </Container>
         </section>
-    )
-}
+    );
+};
 
-export default Hero6
+export default Hero6;

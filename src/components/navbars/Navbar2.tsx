@@ -1,3 +1,4 @@
+import React from 'react';
 import { useEffect } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import classNames from 'classnames';
@@ -51,8 +52,7 @@ const Navbar2 = ({ isSticky, navClass, buttonClass, fixedWidth, hideSearch }: Na
                 id={isSticky ? 'sticky' : ''}
                 collapseOnSelect
                 expand="lg"
-                className={classNames('topnav-menu', navClass)}
-            >
+                className={classNames('topnav-menu', navClass)}>
                 <Container fluid={!fixedWidth}>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" className="me-3" />
                     <Navbar.Brand href="/" className="me-lg-4 me-auto">

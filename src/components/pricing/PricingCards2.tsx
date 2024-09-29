@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Card, Col, Row } from 'react-bootstrap';
 import FeatherIcon from 'feather-icons-react';
@@ -43,8 +44,7 @@ const PricingCards2 = ({ plans }: PricingCardProps) => {
                                         'btn',
                                         plan.isRecommended ? 'btn-primary' : 'btn-soft-success',
                                         'd-block'
-                                    )}
-                                >
+                                    )}>
                                     Purchase Now
                                 </Link>
                                 <ul className="list-unstyled border-top pt-4 mt-4 text-start">

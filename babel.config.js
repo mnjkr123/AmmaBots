@@ -1,5 +1,6 @@
 module.exports = {
     presets: [
-        'next/babel', // Use Next.js's Babel preset
+        '@babel/preset-env',
+        '@babel/preset-react', // Ensure you have this preset to handle JSX
     ],
 };

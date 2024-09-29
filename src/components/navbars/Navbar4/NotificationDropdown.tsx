@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import classNames from 'classnames';
 import { Dropdown, Nav } from 'react-bootstrap';
@@ -35,8 +36,7 @@ const NotificationDropdown = ({ notifications }: NotificationProps) => {
                                         'icon-xxs',
                                         'me-3',
                                         'flex-shink-0'
-                                    )}
-                                >
+                                    )}>
                                     <FeatherIcon
                                         icon={notification.icon}
                                         className={classNames('icon-dual-' + notification.variant)}
