@@ -16,7 +16,12 @@ type CustomToggleProps = {
 const CustomToggle = ({ children, eventKey, containerClass, linkClass, callback }: CustomToggleProps) => {
     const { activeEventKey } = useContext(AccordionContext);
 
-    const decoratedOnClick = useAccordionButton(eventKey, () => callback && callback(eventKey));
+    // Use the eventKey directly in decoratedOnClick
+    const decoratedOnClick = useAccordionButton(eventKey, () => {
+        if (callback) {
+            callback(eventKey); // Now eventKey is explicitly used here
+        }
+    });
 
     const isCurrentEventKey = activeEventKey === eventKey;
 

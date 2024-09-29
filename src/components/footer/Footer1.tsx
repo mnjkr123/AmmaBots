@@ -2,8 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Col, Container, Row } from 'react-bootstrap';
 import FeatherIcon from 'feather-icons-react';
+import Image from 'next/image'; // Import the Image component from next/image
 
-// imgaes
+// images
 import logo from 'assets/images/logo.png';
 
 const Footer1 = () => {
@@ -13,7 +14,7 @@ const Footer1 = () => {
                 <Row>
                     <Col xl={4}>
                         <Link className="navbar-brand me-lg-4 mb-4 me-auto d-flex align-items-center pt-0" to="#">
-                            <img src={logo} height="30" alt="" />
+                            <Image src={logo} height={30} alt="Logo" /> {/* Use the Image component */}
                         </Link>
                         <p className="text-muted w-75">
                             Make your web application stand out with high-quality landing page
@@ -21,7 +22,7 @@ const Footer1 = () => {
                     </Col>
                     <Col xl="auto" lg={3} xs={6}>
                         <div className="ps-xl-5">
-                            <h6 className="mb-3 mt-3 mt-sm-2 fs-14 fw-semibold text-uppercase"> Platform</h6>
+                            <h6 className="mb-3 mt-3 mt-sm-2 fs-14 fw-semibold text-uppercase">Platform</h6>
                             <ul className="list-unstyled">
                                 <li className="my-3">
                                     <Link to="#" className="text-muted">

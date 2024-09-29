@@ -2,8 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Col, Container, Row } from 'react-bootstrap';
 import FeatherIcon from 'feather-icons-react';
+import Image from 'next/image'; // Import Next.js Image component
 
-// imgaes
+// images
 import logo from 'assets/images/logo.png';
 
 const Footer2 = () => {
@@ -13,7 +14,7 @@ const Footer2 = () => {
                 <Row>
                     <Col xl={8}>
                         <Link className="navbar-brand me-lg-4 mb-4 me-auto d-flex align-items-center pt-0" to="#">
-                            <img src={logo} height="30" alt="" />
+                            <Image src={logo} height={30} alt="Logo" /> {/* Use Image component here */}
                         </Link>
                         <p className="text-muted w-50">
                             On the other hand, we denounce with righteous indignation and dislike men who are so

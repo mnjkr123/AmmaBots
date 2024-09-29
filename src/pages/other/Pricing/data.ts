@@ -2,7 +2,6 @@
 import React from 'react';
 
 import { PlanItem } from 'components/pricing';
-import { Benefit } from '../Career/types';
 
 const plans: PlanItem[] = [
     {
@@ -50,27 +49,4 @@ const plans: PlanItem[] = [
     },
 ];
 
-const benefits: Benefit[] = [
-    {
-        icon: 'phone-call',
-        title: 'Technical Support',
-        description: 'Our professional technical support team will help you out at every step',
-    },
-    {
-        icon: 'compass',
-        title: 'Technology',
-        description: 'A special training to get start with the platform by professionals',
-    },
-    {
-        icon: 'bar-chart-2',
-        title: 'Growth Analysis',
-        description: 'A dedicated team to get insights around your growth every month',
-    },
-    {
-        icon: 'coffee',
-        title: 'Rewards',
-        description: 'A special reward for the most performing account every month',
-    },
-];
-
-export { plans, benefits };
+export { plans };
