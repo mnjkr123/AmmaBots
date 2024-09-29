@@ -2,8 +2,8 @@ import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button, Row, Col, Alert } from 'react-bootstrap';
 import { useForm, SubmitHandler } from 'react-hook-form';
-import { yupResolver } from '@hookform/resolvers/yup';
-import * as yup from 'yup';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { z } from 'zod';
 import { useTranslation } from 'react-i18next';
 import FeatherIcon from 'feather-icons-react';
 import { supabase } from '../../helpers/supabaseClient';
@@ -14,10 +14,10 @@ import { APICore, setAuthorization } from '../../helpers/api/apiCore';
 // Initialize apiCore
 const api = new APICore();
 
-// Validation schema for form inputs
-const schema = yup.object().shape({
-    email: yup.string().required('Please enter a valid email').email(),
-    password: yup.string().required('Please enter your password'),
+// Validation schema for form inputs using zod
+const schema = z.object({
+    email: z.string().email('Please enter a valid email').nonempty('Email is required'),
+    password: z.string().nonempty('Password is required'),
 });
 
 // Define the UserData type
@@ -31,13 +31,13 @@ const Login = (): React.ReactElement => {
     const { t } = useTranslation();
     const navigate = useNavigate();
 
-    // Form handling using react-hook-form and yup for validation
+    // Form handling using react-hook-form and zod for validation
     const {
         register,
         formState: { errors },
-        handleSubmit, // Ensure this is used in the form submission
+        // handleSubmit, // Keep this for use within the onSubmit
     } = useForm<UserData>({
-        resolver: yupResolver(schema),
+        resolver: zodResolver(schema),
     });
 
     // Function to handle form submission
@@ -92,9 +92,7 @@ const Login = (): React.ReactElement => {
             )}
 
             {/* Form component to handle login */}
-            <VerticalForm<UserData> onSubmit={handleSubmit(onSubmit)}>
-                {' '}
-                {/* Use handleSubmit here */}
+            <VerticalForm<UserData> onSubmit={onSubmit}>
                 <FormInput
                     type="email"
                     name="email"
@@ -104,6 +102,7 @@ const Login = (): React.ReactElement => {
                     register={register}
                     errors={errors} // Pass errors to FormInput if it accepts it
                 />
+
                 <FormInput
                     label={t('Password')}
                     type="password"
@@ -118,6 +117,7 @@ const Login = (): React.ReactElement => {
                     register={register}
                     errors={errors} // Pass errors to FormInput if it accepts it
                 />
+
                 <FormInput
                     type="checkbox"
                     name="remember"
@@ -126,6 +126,7 @@ const Login = (): React.ReactElement => {
                     defaultChecked
                     register={register}
                 />
+
                 <div className="mb-0 text-center d-grid">
                     <Button type="submit">{t('Log In')}</Button>
                 </div>

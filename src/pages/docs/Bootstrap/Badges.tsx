@@ -52,13 +52,12 @@ const Badges = ({ variants }: BadgesProps) => {
                     Add any of the below mentioned modifier classes to change the appearance of a badge.
                 </p>
 
-                {([...variants, 'light'] || []).map((item, index) => {
+                {[...variants, 'light'].map((item, index) => {
                     return (
                         <Badge
                             key={index.toString()}
                             className={classNames('me-1', item === 'light' && 'text-dark')}
-                            bg={item}
-                        >
+                            bg={item}>
                             {item!.charAt(0).toUpperCase() + item!.slice(1)}
                         </Badge>
                     );

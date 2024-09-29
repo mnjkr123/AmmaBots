@@ -17,7 +17,6 @@ const VerticalForm = <TFormValues extends FieldValues>({
     onSubmit,
     formClass,
 }: VerticalFormProps<TFormValues>) => {
-    // Initialize form methods
     const methods = useForm<TFormValues>({ defaultValues, resolver });
     const {
         handleSubmit,
