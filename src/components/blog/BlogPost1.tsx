@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import { Card, Col, Row } from 'react-bootstrap';
 import FeatherIcon from 'feather-icons-react';
@@ -6,7 +7,6 @@ import { Post } from './types';
 type BlogPostProps = {
     post: Post;
 };
-
 
 const BlogPost1 = ({ post }: BlogPostProps) => {
     return (
@@ -23,8 +23,7 @@ const BlogPost1 = ({ post }: BlogPostProps) => {
                             height="40px"
                             viewBox="0 0 528 40"
                             version="1.1"
-                            xmlns="http://www.w3.org/2000/svg"
-                        >
+                            xmlns="http://www.w3.org/2000/svg">
                             <g id="shape" transform="matrix(-1.138336E-07 -1 1 -1.138336E-07 0 39.92764)">
                                 <path
                                     d="M0 0L40.5467 0C40.5467 0 -31.8215 230.87 38.7134 528.217C39.8794 533.133 31.7549 527.502 31.0925 528.75C28.7914 533.084 26.1543 528.191 24.4327 529.178C59.2372 539.206 14.0091 521.981 12.9329 530.001L1.02722 528.284L0 0Z"

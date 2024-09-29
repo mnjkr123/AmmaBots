@@ -1,3 +1,4 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 import FeatherIcon from 'feather-icons-react';
 import classNames from 'classnames';
@@ -12,8 +13,7 @@ const BackToTop = ({ variant }: BackToTopProps) => {
             className={classNames('btn', 'btn-soft-' + variant, 'shadow-none', 'btn-icon', 'btn-back-to-top')}
             id="btn-back-to-top"
             to="#"
-            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-        >
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}>
             <FeatherIcon icon="arrow-up" className="icon-xxs" />
         </Link>
     );

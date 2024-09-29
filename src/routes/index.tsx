@@ -19,16 +19,9 @@ const Service = React.lazy(() => import('../pages/landings/Service'));
 const Chatbot = React.lazy(() => import('../pages/landings/Chatbot'));
 
 // landings
-const App = React.lazy(() => import('../pages/landings/App'));
-const Saas = React.lazy(() => import('../pages/landings/Saas/Saas'));
-const Saas2 = React.lazy(() => import('../pages/landings/Saas/Saas2'));
+
 const Startup = React.lazy(() => import('../pages/landings/Startup'));
 const Software = React.lazy(() => import('../pages/landings/Software'));
-
-const Coworking = React.lazy(() => import('../pages/landings/Coworking'));
-const Crypto = React.lazy(() => import('../pages/landings/Crypto'));
-const Marketing = React.lazy(() => import('../pages/landings/Marketing'));
-
 // pages
 const Dashboard = React.lazy(() => import('../pages/other/account/Dashboard'));
 
@@ -131,17 +124,10 @@ const AllRoutes = () => {
                 {
                     path: 'landing',
                     children: [
-                        { path: 'app', element: <LoadComponent component={App} /> },
-                        { path: 'saas', element: <LoadComponent component={Saas} /> },
-                        { path: 'saas2', element: <LoadComponent component={Saas2} /> },
                         { path: 'startup', element: <LoadComponent component={Startup} /> },
                         { path: 'software', element: <LoadComponent component={Software} /> },
                         { path: 'service', element: <LoadComponent component={Service} /> },
                         { path: 'service', element: <LoadComponent component={Service} /> },
-
-                        { path: 'coworking', element: <LoadComponent component={Coworking} /> },
-                        { path: 'crypto', element: <LoadComponent component={Crypto} /> },
-                        { path: 'marketing', element: <LoadComponent component={Marketing} /> },
                     ],
                 },
                 {

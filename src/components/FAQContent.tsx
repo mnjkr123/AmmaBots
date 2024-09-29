@@ -1,3 +1,4 @@
+import React from 'react';
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Accordion, AccordionContext, Card, useAccordionButton } from 'react-bootstrap';
@@ -25,8 +26,7 @@ const CustomToggle = ({ children, eventKey, containerClass, linkClass, callback 
             className={classNames(linkClass, {
                 collapsed: !isCurrentEventKey,
             })}
-            onClick={decoratedOnClick}
-        >
+            onClick={decoratedOnClick}>
             <Card.Header>
                 <h5 className={containerClass}>
                     {children} <FeatherIcon icon="chevron-down" className="icon-xs accordion-arrow" />
@@ -65,8 +65,7 @@ const FAQContent = () => {
                             <CustomToggle
                                 eventKey={String(index)}
                                 containerClass="my-1 fw-medium"
-                                linkClass="text-dark"
-                            >
+                                linkClass="text-dark">
                                 {item.question}
                             </CustomToggle>
                             <Accordion.Collapse eventKey={String(index)}>
