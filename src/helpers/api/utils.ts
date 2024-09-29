@@ -1,19 +1,18 @@
 type DownloadFile = {
-    data: any;
+    data: Blob | ArrayBuffer | string; // Specify a more appropriate type for data
     filename: string;
-    mime: any;
-    bom: any;
+    mime: string; // Specify the MIME type as a string
+    bom?: BlobPart; // BOM can be optional; use BlobPart for better typing
 };
 
 const downloadFile = ({ data, filename, mime, bom }: DownloadFile) => {
-    var blobData = typeof bom !== 'undefined' ? [bom, data] : [data];
-    var blob = new Blob(blobData, { type: mime || 'application/octet-stream' });
+    // Create an array of BlobParts
+    const blobData: BlobPart[] = bom ? [bom, data] : [data]; // Ensure blobData is of type BlobPart[]
 
-    var blobURL =
-        window.URL && window.URL.createObjectURL
-            ? window.URL.createObjectURL(blob)
-            : window.webkitURL.createObjectURL(blob);
-    var tempLink = document.createElement('a');
+    const blob = new Blob(blobData, { type: mime || 'application/octet-stream' });
+
+    const blobURL = window.URL.createObjectURL(blob); // Use const for blobURL
+    const tempLink = document.createElement('a'); // Use const for tempLink
     tempLink.style.display = 'none';
     tempLink.href = blobURL;
     tempLink.setAttribute('download', filename);
@@ -30,7 +29,7 @@ const downloadFile = ({ data, filename, mime, bom }: DownloadFile) => {
     tempLink.click();
 
     // Fixes "webkit blob resource error 1"
-    setTimeout(function () {
+    setTimeout(() => {
         document.body.removeChild(tempLink);
         window.URL.revokeObjectURL(blobURL);
     }, 200);

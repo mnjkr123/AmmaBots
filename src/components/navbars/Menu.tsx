@@ -4,15 +4,21 @@ import { NavLink, Link, useLocation } from 'react-router-dom';
 import FeatherIcon from 'feather-icons-react';
 import classNames from 'classnames';
 
+type User = {
+    id: string;
+    name: string;
+    // Add other properties as needed
+};
+
 type MenuProps = {
     showDownload?: boolean;
     navClass?: string;
     buttonClass?: string;
-    loggedInUser?: {};
+    loggedInUser?: User; // Update with the appropriate structure
 };
 
 const Menu = ({ navClass, buttonClass, showDownload, loggedInUser }: MenuProps) => {
-    let location = useLocation();
+    const location = useLocation();
 
     const isActiveRoute = (path: string) => {
         if (location.pathname) {

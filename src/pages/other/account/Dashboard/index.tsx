@@ -6,8 +6,6 @@ import { Col, Container, Row } from 'react-bootstrap';
 import { Navbar4 } from 'components/navbars';
 import { Footer3 } from 'components/footer';
 
-import ProfileWidget from './ProfileWidget';
-import ReecentProjects from './RecentProjects';
 import RevenueWidget from './RevenueWidget';
 import StatWidget from './StatWidget';
 import Tasks from './Tasks';
@@ -33,9 +31,6 @@ const Dashboard = () => {
                         </Col>
                     </Row>
                     <Row>
-                        {/* profile widget */}
-                        <ProfileWidget />
-
                         {/* stat widgets */}
                         <Col lg={3}>
                             <StatWidget icon="check-circle" variant="success" stats={21} title="Tasks Completed" />
@@ -45,9 +40,6 @@ const Dashboard = () => {
                         {/* revenue widget */}
                         <RevenueWidget />
                     </Row>
-
-                    {/* recent projects */}
-                    <ReecentProjects projects={projects} />
 
                     {/* tasks */}
                     <Tasks tasks={tasks} />

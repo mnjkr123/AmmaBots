@@ -13,10 +13,11 @@ type UserData = {
     token: string;
 };
 
-var mock = new MockAdapter(axios);
+const mock = new MockAdapter(axios); // Changed from var to const
 
 export function configureFakeBackend() {
-    let users: UserData[] = [
+    const users: UserData[] = [
+        // Changed from let to const
         {
             id: 1,
             email: 'prompt@coderthemes.com',
@@ -33,16 +34,17 @@ export function configureFakeBackend() {
         return new Promise(function (resolve) {
             setTimeout(function () {
                 // get parameters from post request
-                let params = JSON.parse(config.data);
+                const params = JSON.parse(config.data); // Changed from let to const
 
                 // find if any user matches login credentials
-                let filteredUsers = users.filter((user) => {
+                const filteredUsers = users.filter((user) => {
+                    // Changed from let to const
                     return user.email === params.email && user.password === params.password;
                 });
 
                 if (filteredUsers.length) {
                     // if login details are valid return user details and fake jwt token
-                    let user = filteredUsers[0];
+                    const user = filteredUsers[0]; // Changed from let to const
                     resolve([200, user]);
                 } else {
                     // else return error
@@ -56,11 +58,12 @@ export function configureFakeBackend() {
         return new Promise(function (resolve) {
             setTimeout(function () {
                 // get parameters from post request
-                let params = JSON.parse(config.data);
+                const params = JSON.parse(config.data); // Changed from let to const
 
                 // add new users
-                let [firstName, lastName] = params.fullname.split(' ');
-                let newUser: UserData = {
+                const [firstName, lastName] = params.fullname.split(' '); // Changed from let to const
+                const newUser: UserData = {
+                    // Changed from let to const
                     id: users.length + 1,
                     username: firstName,
                     password: params.password,
@@ -82,16 +85,18 @@ export function configureFakeBackend() {
         return new Promise(function (resolve) {
             setTimeout(function () {
                 // get parameters from post request
-                let params = JSON.parse(config.data);
+                const params = JSON.parse(config.data); // Changed from let to const
 
                 // find if any user matches login credentials
-                let filteredUsers = users.filter((user) => {
+                const filteredUsers = users.filter((user) => {
+                    // Changed from let to const
                     return user.email === params.email;
                 });
 
                 if (filteredUsers.length) {
                     // if login details are valid return user details and fake jwt token
-                    let responseJson = {
+                    const responseJson = {
+                        // Changed from let to const
                         message: "We've sent you a link to reset password to your registered email.",
                     };
                     resolve([200, responseJson]);
