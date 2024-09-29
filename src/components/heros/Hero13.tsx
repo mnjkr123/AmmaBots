@@ -1,6 +1,4 @@
-import { Link } from 'react-router-dom';
 import { Col, Container, Row } from 'react-bootstrap';
-import FeatherIcon from 'feather-icons-react';
 
 // images
 import chatbot from 'assets/images/hero/Chatbot.png';

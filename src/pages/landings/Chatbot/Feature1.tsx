@@ -1,9 +1,8 @@
-import { Badge, Col, Container, Row } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 import FeatherIcon from 'feather-icons-react';
 
 // images
 import chatbot2 from 'assets/images/features/chatbot2.png';
-import desktop from 'assets/images/hero/desktop.jpg';
 
 const Feature1 = () => {
     return (
