@@ -3,6 +3,8 @@ import axios from 'axios';
 
 // Define an interface for the user session
 interface UserSession {
+    id: string;
+    name: string;
     token: string;
     email: string;
     role: string; // Ensure this line exists
@@ -103,10 +105,16 @@ class APICore {
     setUserInSession = (modifiedUser: Partial<UserSession>) => {
         const userInfo = getUserFromSessionStorage();
         if (userInfo) {
-            const { token } = userInfo;
+            const { token, id, name, role } = userInfo; // Extract all required properties
 
             // Create a new object to hold modified user properties
-            const updatedUser: UserSession = { token, email: userInfo.email }; // Start with token and email
+            const updatedUser: UserSession = {
+                token,
+                email: userInfo.email,
+                id, // Include id
+                name, // Include name
+                role, // Include role
+            };
 
             // Loop through the keys of modifiedUser using Object.keys
             for (const key of Object.keys(modifiedUser) as Array<keyof UserSession>) {

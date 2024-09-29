@@ -6,9 +6,10 @@ import { APICore, setAuthorization } from '../../helpers/api/apiCore';
 
 // Define the User type based on your application's user structure
 interface User {
-    id: number; // Example field
-    fullname: string;
+    id: string;
     email: string;
+    name: string; // Add this line
+    role: string; // Ensure role is also included if required
     token: string; // If the API returns a token
     // Add other fields as necessary
 }

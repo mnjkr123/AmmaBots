@@ -4,7 +4,6 @@ import Navbar1 from '../../components/navbars/Navbar1';
 import BackToTop from '../../components/BackToTop';
 
 import Hero from './Hero';
-import Demos from './Demos';
 import InnerPages from './InnerPages';
 import AccountPages from './AccountPages';
 import Features from './Features';
@@ -12,7 +11,7 @@ import CTA from './CTA';
 import Footer from './Footer';
 
 // dummy data
-import { landings, secondaryPages, accountPages, features } from './data';
+import { secondaryPages, accountPages, features } from './data';
 
 const Home = () => {
     return (
@@ -29,9 +28,6 @@ const Home = () => {
                 {/* hero */}
                 <Hero />
             </div>
-
-            {/* demos */}
-            <Demos landings={landings} />
 
             {/* secondary pages */}
             <InnerPages pages={secondaryPages} />

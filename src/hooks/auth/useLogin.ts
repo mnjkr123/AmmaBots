@@ -5,7 +5,10 @@ import { APICore, setAuthorization } from '../../helpers/api/apiCore';
 
 // Type for user data (adjust fields according to your API response)
 interface User {
+    id: string;
     email: string;
+    name: string; // Add this line if it doesn't exist
+    role: string; // Ensure role is also included if required
     token: string;
     // Add other fields as needed
 }

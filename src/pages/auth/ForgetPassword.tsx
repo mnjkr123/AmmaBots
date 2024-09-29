@@ -35,7 +35,7 @@ const ForgetPassword = () => {
     handle form submission
     */
     const onSubmit = (formData: UserData) => {
-        forgotPassword!({ email: formData.email });
+        forgotPassword!(formData.email);
     };
 
     return (

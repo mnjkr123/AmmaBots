@@ -1,7 +1,8 @@
-const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
-const withSvgr = require('next-svgr');
+import { NextConfig } from 'next';
+// import NodePolyfillPlugin from 'node-polyfill-webpack-plugin';
+import withSvgr from 'next-svgr';
 
-module.exports = withSvgr({
+const nextConfig: NextConfig = withSvgr({
     webpack: (config) => {
         // Ensure fallback for certain Node.js core modules
         config.resolve.fallback = {
@@ -17,8 +18,10 @@ module.exports = withSvgr({
         };
 
         // Add the NodePolyfillPlugin to the webpack plugins
-        config.plugins.push(new NodePolyfillPlugin());
+        // config.plugins.push(new NodePolyfillPlugin());
 
         return config;
     },
 });
+
+export default nextConfig;

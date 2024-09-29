@@ -58,10 +58,10 @@ const SwiperSlider2 = ({ slides, hasLogo }: SwiperSliderProps) => {
                                         <h6 className="m-0">{slide.customer.name}</h6>
                                         <p className="my-0 text-muted fs-13">{slide.customer.designation}</p>
                                     </div>
-                                    {hasLogo && (
-                                        // Replace img with Image for the logo
-                                        <Image src={slide.logo} alt="logo" height={32} width={32} />
-                                    )}
+                                    {hasLogo &&
+                                        slide.logo && ( // Check if hasLogo and logo is defined
+                                            <Image src={slide.logo} alt="logo" height={32} width={32} />
+                                        )}
                                 </div>
                             </Card.Body>
                         </Card>

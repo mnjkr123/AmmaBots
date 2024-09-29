@@ -11,7 +11,14 @@ import { VerticalForm, FormInput } from '../../components/form';
 import AuthLayout from './AuthLayout';
 import { APICore, setAuthorization } from '../../helpers/api/apiCore';
 
-// Initialize apiCore
+// Define the User type
+interface User {
+    id: string;
+    email: string;
+    name?: string; // Optional
+    role?: string; // Optional
+}
+
 const api = new APICore();
 
 // Validation schema for form inputs using zod
@@ -22,7 +29,9 @@ const schema = z.object({
 
 // Define the UserData type
 interface UserData {
+    id: string;
     email: string;
+    name: string; // Add this line if it doesn't exist
     password: string;
     remember?: boolean; // Optional remember field
 }
@@ -31,16 +40,13 @@ const Login = (): React.ReactElement => {
     const { t } = useTranslation();
     const navigate = useNavigate();
 
-    // Form handling using react-hook-form and zod for validation
     const {
         register,
         formState: { errors },
-        // handleSubmit, // Keep this for use within the onSubmit
     } = useForm<UserData>({
         resolver: zodResolver(schema),
     });
 
-    // Function to handle form submission
     const onSubmit: SubmitHandler<UserData> = async (data) => {
         try {
             const {
@@ -58,10 +64,21 @@ const Login = (): React.ReactElement => {
 
             if (session) {
                 const accessToken = session.access_token;
-                api.setLoggedInUser({
-                    user: { ...user, email: data.email },
-                    token: accessToken,
-                });
+
+                const typedUser = user as User;
+
+                if (typedUser.name) {
+                    api.setLoggedInUser({
+                        id: typedUser.id,
+                        name: typedUser.name,
+                        email: data.email,
+                        token: accessToken,
+                        role: typedUser.role || 'defaultRole',
+                    });
+                } else {
+                    console.error('User name is undefined');
+                }
+
                 setAuthorization(accessToken);
                 navigate('/Service');
             }
@@ -84,14 +101,12 @@ const Login = (): React.ReactElement => {
             <h6 className="h5 mb-0 mt-3">{t('Welcome back!')}</h6>
             <p className="text-muted mt-1 mb-4">{t('Enter your email address and password to access AI Features')}</p>
 
-            {/* Display validation errors */}
             {(errors.email || errors.password) && (
                 <Alert variant="danger" className="mb-3">
                     {errors.email?.message || errors.password?.message}
                 </Alert>
             )}
 
-            {/* Form component to handle login */}
             <VerticalForm<UserData> onSubmit={onSubmit}>
                 <FormInput
                     type="email"
@@ -100,7 +115,7 @@ const Login = (): React.ReactElement => {
                     placeholder={t('Email')}
                     containerClass={'mb-3'}
                     register={register}
-                    errors={errors} // Pass errors to FormInput if it accepts it
+                    errors={errors}
                 />
 
                 <FormInput
@@ -115,7 +130,7 @@ const Login = (): React.ReactElement => {
                     }
                     containerClass={'mb-3'}
                     register={register}
-                    errors={errors} // Pass errors to FormInput if it accepts it
+                    errors={errors}
                 />
 
                 <FormInput

@@ -14,7 +14,7 @@ type MenuProps = {
     showDownload?: boolean;
     navClass?: string;
     buttonClass?: string;
-    loggedInUser?: User; // Update with the appropriate structure
+    loggedInUser?: User | null; // Allow null if needed
 };
 
 const Menu = ({ navClass, buttonClass, showDownload, loggedInUser }: MenuProps) => {

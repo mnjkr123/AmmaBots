@@ -21,8 +21,18 @@ type Navbar1Props = {
     hideSearch?: boolean;
 };
 
+// Assuming User type is defined with id and name
+type User = {
+    id: string;
+    name: string;
+    // other properties...
+};
+
 const Navbar1 = ({ isSticky, navClass, buttonClass, fixedWidth, hideSearch }: Navbar1Props) => {
     const [loggedInUser] = useUser();
+
+    // Create a user object if loggedInUser exists
+    const user: User | null = loggedInUser ? { id: loggedInUser.id, name: loggedInUser.name } : null;
 
     // on scroll add navbar class
     useEffect(() => {
@@ -82,7 +92,7 @@ const Navbar1 = ({ isSticky, navClass, buttonClass, fixedWidth, hideSearch }: Na
                         )}
                         <Menu
                             showDownload
-                            loggedInUser={loggedInUser}
+                            loggedInUser={user} // Passing User type
                             navClass="ms-auto"
                             buttonClass={buttonClass ? buttonClass : 'btn-primary'}
                         />

@@ -24,11 +24,6 @@ const Dashboard = React.lazy(() => import('../pages/other/account/Dashboard'));
 
 const Pricing = React.lazy(() => import('../pages/other/Pricing'));
 
-// docs
-const ChangeLog = React.lazy(() => import('../pages/docs/ChangeLog'));
-
-const Navbars = React.lazy(() => import('../pages/docs/Navbars'));
-
 const loading = () => <div className=""></div>;
 
 type LoadComponentProps = {
@@ -60,13 +55,6 @@ const AllRoutes = () => {
                         { path: 'forget-password', element: <LoadComponent component={ForgetPassword} /> },
                         { path: 'confirm', element: <LoadComponent component={Confirm} /> },
                         { path: 'logout', element: <LoadComponent component={Logout} /> },
-                    ],
-                },
-                {
-                    path: 'docs',
-                    children: [
-                        { path: 'change-log', element: <LoadComponent component={ChangeLog} /> },
-                        { path: 'navbars', element: <LoadComponent component={Navbars} /> },
                     ],
                 },
                 {

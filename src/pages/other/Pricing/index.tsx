@@ -7,12 +7,10 @@ import { Footer1 } from 'components/footer';
 
 import Hero from './Hero';
 import PricingPlans from './PricingPlans';
-import Benefits from './Benefits';
-import FAQs from './FAQs';
 import CTA from './CTA';
 
 // dummy data
-import { plans, benefits } from './data';
+import { plans } from './data';
 
 const Pricing = () => {
     return (
@@ -29,12 +27,6 @@ const Pricing = () => {
 
             {/* plans */}
             <PricingPlans plans={plans} />
-
-            {/* benefits */}
-            <Benefits benefits={benefits} />
-
-            {/* faqs */}
-            <FAQs />
 
             {/* cta */}
             <CTA />
