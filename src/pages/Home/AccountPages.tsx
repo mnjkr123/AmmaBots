@@ -1,6 +1,7 @@
 import React from 'react';
 import { Badge, Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import Image from 'next/image'; // Import Image from next/image
 
 // types
 import { Demo } from './types';
@@ -27,7 +28,14 @@ const AccountPages = ({ pages }: AccountPagesProps) => {
                             <Col lg={6} key={index.toString()}>
                                 <Link to={item.url} target="_blank" className="mt-4">
                                     <div className="shadow p-2 rounded-sm border">
-                                        <img src={item.image} className="img-fluid" alt="demo-img" />
+                                        <Image
+                                            src={item.image}
+                                            className="img-fluid"
+                                            alt={item.name} // Use item name for accessibility
+                                            layout="responsive" // Use layout for responsive behavior
+                                            width={500} // Set appropriate width
+                                            height={300} // Set appropriate height
+                                        />
                                     </div>
                                     <h4 className="text-center mt-3">{item.name}</h4>
                                 </Link>

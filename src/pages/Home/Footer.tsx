@@ -1,6 +1,7 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import Image from 'next/image'; // Import Image from next/image
 
 // images
 import logo from 'assets/images/logo.png';
@@ -32,7 +33,13 @@ const Footer = () => {
                             <a href="https://coderthemes.com/">Coderthemes</a>
                         </p>
 
-                        <img src={logo} height="30" className="mt-2 mb-4" alt="" />
+                        <Image
+                            src={logo}
+                            height={30} // Set the height for the logo
+                            width={100} // Set the width for the logo (adjust as necessary)
+                            className="mt-2 mb-4"
+                            alt="Company Logo" // Provide a meaningful alt text for accessibility
+                        />
                     </Col>
                 </Row>
             </Container>

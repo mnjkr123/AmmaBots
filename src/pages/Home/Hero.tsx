@@ -9,6 +9,7 @@ import { Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 // images
+import Image from 'next/image'; // Import Image from next/image
 import saas1 from 'assets/images/hero/saas1.jpg';
 import saas2 from 'assets/images/hero/saas2.jpg';
 import saas3 from 'assets/images/hero/saas3.jpg';
@@ -33,7 +34,14 @@ const SwiperSlider = () => {
             {images.map((img, index) => {
                 return (
                     <SwiperSlide key={index.toString()}>
-                        <img src={img} alt="" className="img-fluid rounded-lg" />
+                        <Image
+                            src={img}
+                            alt={`Slide ${index + 1}`} // Provide a meaningful alt text for accessibility
+                            className="img-fluid rounded-lg"
+                            layout="responsive" // Ensures the image maintains its aspect ratio
+                            width={600} // Set a width (adjust according to your design)
+                            height={400} // Set a height (adjust according to your design)
+                        />
                     </SwiperSlide>
                 );
             })}

@@ -30,7 +30,7 @@ export function configureFakeBackend() {
     ];
 
     mock.onPost('/login/').reply(function (config) {
-        return new Promise(function (resolve, reject) {
+        return new Promise(function (resolve) {
             setTimeout(function () {
                 // get parameters from post request
                 let params = JSON.parse(config.data);
@@ -53,7 +53,7 @@ export function configureFakeBackend() {
     });
 
     mock.onPost('/register/').reply(function (config) {
-        return new Promise(function (resolve, reject) {
+        return new Promise(function (resolve) {
             setTimeout(function () {
                 // get parameters from post request
                 let params = JSON.parse(config.data);
@@ -79,7 +79,7 @@ export function configureFakeBackend() {
     mock.onPost('/logout/').reply(200, { message: 'Logged Out Successfully' });
 
     mock.onPost('/forget-password/').reply(function (config) {
-        return new Promise(function (resolve, reject) {
+        return new Promise(function (resolve) {
             setTimeout(function () {
                 // get parameters from post request
                 let params = JSON.parse(config.data);
