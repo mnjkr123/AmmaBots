@@ -21,7 +21,7 @@ const loading = () => <div className=""></div>;
  * @returns
  */
 const PrivateRoute = ({ roles }: PrivateRouteProps) => {
-    let location = useLocation();
+    const location = useLocation(); // Change to const
     const [loggedInUser] = useUser();
     const api = new APICore();
 
@@ -32,9 +32,9 @@ const PrivateRoute = ({ roles }: PrivateRouteProps) => {
         return <Navigate to={'/auth/login'} state={{ from: location }} replace />;
     }
 
-    // Check if route is restricted by role
-    if (roles && roles.indexOf(loggedInUser.role) === -1) {
-        // Role not authorized, redirect to home page
+    // Check if the loggedInUser is null or if the route is restricted by role
+    if (roles && (!loggedInUser || roles.indexOf(loggedInUser.role) === -1)) {
+        // Role not authorized or user is null, redirect to home page
         return <Navigate to={{ pathname: '/' }} />;
     }
 

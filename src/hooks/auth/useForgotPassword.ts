@@ -14,7 +14,12 @@ export default function useForgotPassword(): [string, string, boolean, (email: s
             setResetPasswordSuccess(response.data.message);
             setPasswordReset(true);
         } catch (e) {
-            setError(e.message || 'An error occurred');
+            // Type assertion to handle unknown type
+            if (e instanceof Error) {
+                setError(e.message);
+            } else {
+                setError('An error occurred');
+            }
             setPasswordReset(false);
         }
     };

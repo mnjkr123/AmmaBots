@@ -1,10 +1,9 @@
 import React from 'react';
-
 import { Navigate } from 'react-router-dom';
 
 const Root = () => {
     const getRootUrl = () => {
-        let url: string = 'home';
+        const url: string = 'home'; // Change from let to const
 
         return url;
     };

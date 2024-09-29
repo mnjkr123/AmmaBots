@@ -1,7 +1,3 @@
-/// <reference types="node" />
-/// <reference types="react" />
-/// <reference types="react-dom" />
-
 // Remove the NodeJS and ProcessEnv interface declarations
 // as they are not being used in your codebase.
 

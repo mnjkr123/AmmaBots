@@ -5,6 +5,7 @@ import axios from 'axios';
 interface UserSession {
     token: string;
     email: string;
+    role: string; // Ensure this line exists
     // Add any other properties you expect in the user session
 }
 
