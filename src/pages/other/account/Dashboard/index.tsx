@@ -11,7 +11,7 @@ import StatWidget from './StatWidget';
 import Tasks from './Tasks';
 
 // dummy data
-import { projects, tasks } from './data';
+import { tasks } from './data';
 
 const Dashboard = () => {
     return (
