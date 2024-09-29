@@ -2,6 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Badge, Col, Container, Row } from 'react-bootstrap';
 import FeatherIcon from 'feather-icons-react';
+import Image from 'next/image'; // Import Image from next/image
+
+// Import your desired image here
+import exampleImage from 'assets/images/hero/example-image.png'; // Update this path
 
 const Hero5 = () => {
     return (
@@ -45,6 +49,19 @@ const Hero5 = () => {
                         <Link to="#" className="btn btn-outline-secondary ms-2">
                             Learn More
                         </Link>
+
+                        {/* Add an Image component here as needed */}
+                        <div className="mt-4">
+                            <Image
+                                src={exampleImage}
+                                alt="Example"
+                                width={600} // Specify width
+                                height={400} // Specify height
+                                className="img-fluid" // Maintain fluid class for responsiveness
+                                data-aos="fade-up" // Optional animation
+                                data-aos-duration="1000"
+                            />
+                        </div>
                     </Col>
                 </Row>
             </Container>

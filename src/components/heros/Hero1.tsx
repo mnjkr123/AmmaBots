@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Row, Col, Button } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import FeatherIcon from 'feather-icons-react';
+import Image from 'next/image'; // Import Image from next/image
 
 // swiper
 import { Autoplay } from 'swiper';
@@ -33,52 +34,36 @@ const SwiperSlider = () => {
     };
 
     return (
-        <Swiper
-            // install Swiper modules
-            modules={[Autoplay]}
-            {...swiperConfig}>
-            {(slides || []).map((slide, index) => {
-                return (
-                    <SwiperSlide key={index.toString()}>
-                        <div className="swiper-slide-content shadow bg-white rounded-sm p-3 quote">
-                            <div className="d-flex text-start">
-                                <img
-                                    src={slide.avatar}
-                                    alt=""
-                                    className="img-fluid avatar-sm rounded-circle align-self-center me-3"
-                                />
-                                <div className="fs-14 text-muted">
-                                    {slide.description}
-                                    <p className="mb-0">
-                                        <span className="ms-0">
+        <Swiper modules={[Autoplay]} {...swiperConfig}>
+            {(slides || []).map((slide, index) => (
+                <SwiperSlide key={index.toString()}>
+                    <div className="swiper-slide-content shadow bg-white rounded-sm p-3 quote">
+                        <div className="d-flex text-start">
+                            <Image
+                                src={slide.avatar}
+                                alt="Avatar"
+                                width={50} // Specify width
+                                height={50} // Specify height
+                                className="img-fluid avatar-sm rounded-circle align-self-center me-3"
+                            />
+                            <div className="fs-14 text-muted">
+                                {slide.description}
+                                <p className="mb-0">
+                                    <span className="ms-0">
+                                        {[...Array(5)].map((_, i) => (
                                             <FeatherIcon
+                                                key={i}
                                                 icon="star"
                                                 className="me-1 icon icon-xxs icon-fill-warning text-warning"
                                             />
-                                            <FeatherIcon
-                                                icon="star"
-                                                className="me-1 icon icon-xxs icon-fill-warning text-warning"
-                                            />
-                                            <FeatherIcon
-                                                icon="star"
-                                                className="me-1 icon icon-xxs icon-fill-warning text-warning"
-                                            />
-                                            <FeatherIcon
-                                                icon="star"
-                                                className="me-1 icon icon-xxs icon-fill-warning text-warning"
-                                            />
-                                            <FeatherIcon
-                                                icon="star"
-                                                className="me-1 icon icon-xxs icon-fill-warning text-warning"
-                                            />
-                                        </span>
-                                    </p>
-                                </div>
+                                        ))}
+                                    </span>
+                                </p>
                             </div>
                         </div>
-                    </SwiperSlide>
-                );
-            })}
+                    </div>
+                </SwiperSlide>
+            ))}
         </Swiper>
     );
 };
@@ -94,7 +79,7 @@ const Hero1 = () => {
                             your Mobile App
                         </h1>
                         <p className="mt-3 fs-17 text-muted">
-                            To increase sales by skyrocketing communication with All messages in one simple dashboard it
+                            To increase sales by skyrocketing communication with all messages in one simple dashboard it
                             now takes seconds.
                         </p>
 
@@ -119,7 +104,14 @@ const Hero1 = () => {
                     <Col lg={{ offset: 2, span: 4 }} className="text-end">
                         <div className="position-relative">
                             <div className="hero-img mt-4 mt-sm-0">
-                                <img src={app1} alt="" className="img-fluid" data-bs-aos="zoom-in-up" />
+                                <Image
+                                    src={app1}
+                                    alt="App Showcase"
+                                    width={500} // Specify width
+                                    height={500} // Specify height
+                                    className="img-fluid"
+                                    data-bs-aos="zoom-in-up"
+                                />
                             </div>
                             <div className="slider">
                                 <SwiperSlider />

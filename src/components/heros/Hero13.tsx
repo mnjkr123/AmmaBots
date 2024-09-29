@@ -1,5 +1,6 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
+import Image from 'next/image'; // Import Image from next/image
 
 // images
 import chatbot from 'assets/images/hero/Chatbot.png';
@@ -21,7 +22,12 @@ const Hero13 = () => {
                     </Col>
                     <Col lg={{ span: 5, offset: 1 }} className="hero-right">
                         <div className="img-container" data-aos="fade-left" data-aos-duration="600">
-                            <img src={chatbot} alt="chatbot" />
+                            <Image
+                                src={chatbot}
+                                alt="chatbot"
+                                width={500} // Specify width
+                                height={500} // Specify height
+                            />
                         </div>
                     </Col>
                 </Row>

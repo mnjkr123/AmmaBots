@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
 import { FormInput } from '../form';
+import Image from 'next/image'; // Import Image from next/image
 
 // images
 import marketing from 'assets/images/hero/marketing.png';
@@ -12,7 +13,13 @@ const Hero10 = () => {
                 <Row className="align-items-center text-center text-sm-start">
                     <Col lg={6} sm={{ order: 1 }} xs={{ order: 2 }}>
                         <div className="img-container" data-aos="fade-right">
-                            <img src={marketing} alt="marketing" className="img-fluid" />
+                            <Image
+                                src={marketing}
+                                alt="marketing"
+                                width={500} // Specify width
+                                height={500} // Specify height
+                                className="img-fluid"
+                            />
                         </div>
                     </Col>
                     <Col lg={{ span: 5, offset: 1 }} sm={{ order: 2 }}>

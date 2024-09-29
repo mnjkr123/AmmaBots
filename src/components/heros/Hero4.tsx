@@ -1,5 +1,6 @@
 import React from 'react';
 import { Button, Col, Container, Row } from 'react-bootstrap';
+import Image from 'next/image'; // Import Image from next/image
 
 // images
 import Startup from 'assets/images/hero/startup1.svg';
@@ -27,11 +28,13 @@ const Hero4 = () => {
                     </Col>
                     <Col lg={7} md={6}>
                         <div className="img-container text-end pt-5 pt-sm-0">
-                            <img
+                            <Image
                                 src={Startup}
                                 alt="startup"
-                                className="img-fluid"
-                                data-aos="fade-left"
+                                width={500} // Specify width
+                                height={500} // Specify height
+                                className="img-fluid" // Maintain fluid class for responsiveness
+                                data-aos="fade-left" // Keep animation attributes
                                 data-aos-duration="1000"
                             />
                         </div>

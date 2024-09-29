@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Col, Container, Row } from 'react-bootstrap';
+import Image from 'next/image'; // Import Image from next/image
 
 // images
 import portfolio1 from 'assets/images/hero/portfolio1.png';
@@ -38,7 +39,13 @@ const Hero3 = () => {
                             className="img-container text-center text-lg-end"
                             data-aos="fade-up"
                             data-aos-duration="500">
-                            <img src={portfolio1} alt="Hero" className="img-fluid" />
+                            <Image
+                                src={portfolio1}
+                                alt="Hero"
+                                width={500} // Specify width
+                                height={500} // Specify height
+                                className="img-fluid" // Maintain fluid class for responsiveness
+                            />
                         </div>
                     </Col>
                 </Row>
