@@ -1,6 +1,5 @@
 // next.config.js
-const withPlugins = require('next-compose-plugins'); // Example of using a plugin
-const nodePolyfillWebpackPlugin = require('node-polyfill-webpack-plugin'); // Example of importing a plugin
+const nodePolyfillWebpackPlugin = require('node-polyfill-webpack-plugin'); // Importing a plugin
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -23,4 +22,4 @@ const nextConfig = {
 };
 
 // Export the configuration
-module.exports = withPlugins([[nodePolyfillWebpackPlugin]], nextConfig);
+module.exports = nextConfig;
