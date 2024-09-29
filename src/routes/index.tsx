@@ -25,11 +25,9 @@ const Saas2 = React.lazy(() => import('../pages/landings/Saas/Saas2'));
 const Startup = React.lazy(() => import('../pages/landings/Startup'));
 const Software = React.lazy(() => import('../pages/landings/Software'));
 
-const Agency = React.lazy(() => import('../pages/landings/Agency'));
 const Coworking = React.lazy(() => import('../pages/landings/Coworking'));
 const Crypto = React.lazy(() => import('../pages/landings/Crypto'));
 const Marketing = React.lazy(() => import('../pages/landings/Marketing'));
-const Portfolio = React.lazy(() => import('../pages/landings/Portfolio'));
 
 // pages
 const Dashboard = React.lazy(() => import('../pages/other/account/Dashboard'));
@@ -142,11 +140,9 @@ const AllRoutes = () => {
                         { path: 'service', element: <LoadComponent component={Service} /> },
                         { path: 'service', element: <LoadComponent component={Service} /> },
 
-                        { path: 'agency', element: <LoadComponent component={Agency} /> },
                         { path: 'coworking', element: <LoadComponent component={Coworking} /> },
                         { path: 'crypto', element: <LoadComponent component={Crypto} /> },
                         { path: 'marketing', element: <LoadComponent component={Marketing} /> },
-                        { path: 'portfolio', element: <LoadComponent component={Portfolio} /> },
                     ],
                 },
                 {
