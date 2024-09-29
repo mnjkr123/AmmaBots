@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { Alert, Card, Col, Row } from 'react-bootstrap';
 
 // component
@@ -30,8 +32,7 @@ const CodeSpliting = () => {
                                         <a
                                             href="https://reactjs.org/docs/code-splitting.html#reactlazy"
                                             target="_blank"
-                                            rel="noreferrer"
-                                        >
+                                            rel="noreferrer">
                                             React.lazy
                                         </a>
                                     </h4>

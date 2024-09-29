@@ -1,4 +1,5 @@
 // components
+import React from 'react';
 import Navbar1 from '../../components/navbars/Navbar1';
 import BackToTop from '../../components/BackToTop';
 

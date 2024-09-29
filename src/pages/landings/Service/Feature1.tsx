@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { Badge, Col, Container, Row } from 'react-bootstrap';
 import FeatherIcon from 'feather-icons-react';
 
@@ -70,8 +72,7 @@ const Feature1 = () => {
                         <div
                             className="bg-white p-2 rounded border shadow"
                             data-aos="fade-right"
-                            data-aos-duration="600"
-                        >
+                            data-aos-duration="600">
                             <img src={desktop} alt="desktop" className="img-fluid" />
                         </div>
                     </Col>

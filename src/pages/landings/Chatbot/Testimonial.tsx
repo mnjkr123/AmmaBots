@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { Badge, Button, Col, Container, Row } from 'react-bootstrap';
 import FeatherIcon from 'feather-icons-react';
 

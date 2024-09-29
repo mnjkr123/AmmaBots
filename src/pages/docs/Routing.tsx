@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { Alert, Card, Col, Row } from 'react-bootstrap';
 
 // component

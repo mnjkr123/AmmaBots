@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { Badge, Button, Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
@@ -73,8 +75,7 @@ const Footer = () => {
                                         <Badge
                                             pill
                                             bg=""
-                                            className="align-middle badge-soft-info fw-normal fs-11 px-2 py-1 ms-1"
-                                        >
+                                            className="align-middle badge-soft-info fw-normal fs-11 px-2 py-1 ms-1">
                                             We're hiring
                                         </Badge>
                                     </Link>

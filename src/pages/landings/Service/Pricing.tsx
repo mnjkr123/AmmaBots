@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { Col, Container, Row } from 'react-bootstrap';
 import { PricingCards1, PlanItem } from 'components/pricing';
 

@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { Card, Col, Row } from 'react-bootstrap';
 
 // component
@@ -18,8 +20,7 @@ const QuickStart = () => {
                                     <a
                                         href="https://github.com/facebook/create-react-app"
                                         target="_blank"
-                                        rel="noreferrer"
-                                    >
+                                        rel="noreferrer">
                                         Create React App (CLI)
                                     </a>
                                     .

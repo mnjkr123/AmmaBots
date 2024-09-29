@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { Row, Col, Card } from 'react-bootstrap';
 
 // components
@@ -90,8 +92,7 @@ const Introduction = () => {
 │   │   └── App.tsx                 => Main application component
 │   │   └── i18n.ts                 => internationalization
 </pre>`
-                                    )}
-                                ></div>
+                                    )}></div>
                             </Card.Body>
                         </Card>
                     </Col>
