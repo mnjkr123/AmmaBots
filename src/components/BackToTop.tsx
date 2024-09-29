@@ -4,10 +4,10 @@ import FeatherIcon from 'feather-icons-react';
 import classNames from 'classnames';
 
 type BackToTopProps = {
-    variant: string;
+    variant?: string; // Make variant optional
 };
 
-const BackToTop = ({ variant }: BackToTopProps) => {
+const BackToTop: React.FC<BackToTopProps> = ({ variant = 'primary' }) => {
     return (
         <Link
             className={classNames('btn', 'btn-soft-' + variant, 'shadow-none', 'btn-icon', 'btn-back-to-top')}
@@ -17,10 +17,6 @@ const BackToTop = ({ variant }: BackToTopProps) => {
             <FeatherIcon icon="arrow-up" className="icon-xxs" />
         </Link>
     );
-};
-
-BackToTop.defaultProps = {
-    variant: 'primary',
 };
 
 export default BackToTop;
