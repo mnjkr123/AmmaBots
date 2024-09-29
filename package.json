@@ -131,6 +131,7 @@
   },
   "devDependencies": {
     "@types/leaflet": "^1.7.9",
+    "@types/react-modal-image": "^2.6.3",
     "prettier": "2.5.1"
   },
   "jest": {
