@@ -1,8 +1,10 @@
-// @ts-check
+// next.config.js
+const { createRequire } = require('module');
+const require = createRequire(import.meta.url); // Only needed if you are using ES modules
 
-import { createRequire } from 'module';
-const require = createRequire(import.meta.url); // Allows using require in ES modules
-import NodePolyfillPlugin from 'node-polyfill-webpack-plugin';
+// Import your desired configurations directly
+const withPlugins = require('next-compose-plugins'); // Example of using a plugin
+const nodePolyfillWebpackPlugin = require('node-polyfill-webpack-plugin'); // Example of importing a plugin
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
@@ -20,11 +22,9 @@ const nextConfig = {
             child_process: false, // Disable 'child_process' module
         };
 
-        // Add the NodePolyfillPlugin to the webpack plugins
-        config.plugins.push(new NodePolyfillPlugin());
-
-        return config;
+        return config; // Return the modified config
     },
 };
 
-export default nextConfig; // Export the configuration
+// Export the configuration
+module.exports = withPlugins([[nodePolyfillWebpackPlugin]], nextConfig);
