@@ -31,7 +31,6 @@ const Marketing = React.lazy(() => import('../pages/landings/Marketing'));
 
 // pages
 const Dashboard = React.lazy(() => import('../pages/other/account/Dashboard'));
-const Settings = React.lazy(() => import('../pages/other/account/Settings'));
 
 const Blog = React.lazy(() => import('../pages/other/Blog'));
 const BlogPost = React.lazy(() => import('../pages/other/BlogPost'));
@@ -182,10 +181,7 @@ const AllRoutes = () => {
                     children: [
                         {
                             path: 'account',
-                            children: [
-                                { path: 'dashboard', element: <LoadComponent component={Dashboard} /> },
-                                { path: 'settings', element: <LoadComponent component={Settings} /> },
-                            ],
+                            children: [{ path: 'dashboard', element: <LoadComponent component={Dashboard} /> }],
                         },
                     ],
                 },
