@@ -6,6 +6,7 @@ import { useEffect } from 'react';
 
 // Images
 import logo from '../../assets/images/logo.png';
+import Image from 'next/image'; // Import Image from next/image
 
 // SVG Component for MailOpened
 const MailOpened = () => {
@@ -40,7 +41,13 @@ const Confirm = () => {
                     <Col xl={6} md={10} lg={8}>
                         <div className="mx-auto mb-3">
                             <Link to="/" className="d-flex justify-content-center align-items-center">
-                                <img src={logo} alt="logo" height="30" className="align-self-center" />
+                                <Image
+                                    src={logo} // Use the logo image
+                                    alt="logo" // Provide meaningful alt text for accessibility
+                                    height={30} // Set height
+                                    width={100} // Set width (adjust as necessary)
+                                    className="align-self-center"
+                                />
                             </Link>
                         </div>
                         <Card>

@@ -1,7 +1,7 @@
 import React from 'react';
-
 import { Col, Container, Row } from 'react-bootstrap';
 import FeatherIcon from 'feather-icons-react';
+import Image from 'next/image'; // Import the Image component
 
 // images
 import chatbot2 from 'assets/images/features/chatbot2.png';
@@ -53,12 +53,14 @@ const Feature1 = () => {
                         </div>
                     </Col>
                     <Col lg={{ span: 6, offset: 1 }}>
-                        <img
+                        <Image
                             src={chatbot2}
                             alt="chatbot2"
                             className="img-fluid"
                             data-aos="fade-left"
                             data-aos-duration="700"
+                            height={500} // Set appropriate height
+                            width={500} // Set appropriate width
                         />
                     </Col>
                 </Row>

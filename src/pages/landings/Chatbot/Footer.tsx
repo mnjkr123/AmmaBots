@@ -1,9 +1,6 @@
 import React from 'react';
-
 import { Badge, Button, Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-
-// component
 import { FormInput } from 'components/form';
 
 const Footer = () => {

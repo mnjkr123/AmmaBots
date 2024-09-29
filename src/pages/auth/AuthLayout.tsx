@@ -10,6 +10,7 @@ import { slides1 } from '../../components/sliders/data';
 
 // images
 import logo from '../../assets/images/logo.png';
+import Image from 'next/image'; // Import Image from next/image
 
 type AuthLayoutProps = {
     hasSlider: boolean;
@@ -29,15 +30,15 @@ const AuthLayout = ({ hasSlider, children, bottomLinks }: AuthLayoutProps) => {
                                     <Col
                                         xs={!hasSlider && 12}
                                         md={hasSlider && 5}
-                                        className={hasSlider ? 'shadow' : ''}
-                                    >
+                                        className={hasSlider ? 'shadow' : ''}>
                                         <div className="p-xl-5 p-3">
                                             <div className="mx-auto mb-5">
                                                 <Link to="/" className="d-flex">
-                                                    <img
-                                                        src={logo}
-                                                        alt="logo"
-                                                        height="30"
+                                                    <Image
+                                                        src={logo} // Use the logo image
+                                                        alt="logo" // Provide meaningful alt text for accessibility
+                                                        height={30} // Set height
+                                                        width={100} // Set width (adjust as necessary)
                                                         className="align-self-center"
                                                     />
                                                 </Link>
