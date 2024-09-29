@@ -24,12 +24,14 @@ const SwiperSlider3 = () => {
         roundLengths: true,
     };
 
+    const images = [saas1, saas2, saas3];
+
     return (
         <Swiper modules={[Autoplay]} {...swiperConfig}>
-            {([saas1, saas2, saas3] || []).map((img, index) => {
+            {images.map((img, index) => {
                 return (
                     <SwiperSlide key={index.toString()}>
-                        <div className="swiper-slide-content ">
+                        <div className="swiper-slide-content">
                             <div className="video-overlay d-flex align-items-center justify-content-center">
                                 <Link to="#" className="btn-play success"></Link>
                             </div>

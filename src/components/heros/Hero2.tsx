@@ -25,20 +25,19 @@ const SwiperSlider = () => {
         },
     };
 
+    const images = [coworking1, coworking2, coworking3];
+
     return (
         <Swiper
             // install Swiper modules
             modules={[Navigation, Autoplay]}
             {...swiperConfig}
-            data-aos="fade-up"
-        >
-            {([coworking1, coworking2, coworking3] || []).map((image, index) => {
-                return (
-                    <SwiperSlide key={index.toString()}>
-                        <div className="slider-item" style={{ backgroundImage: `url(${image})` }}></div>
-                    </SwiperSlide>
-                );
-            })}
+            data-aos="fade-up">
+            {images.map((image, index) => (
+                <SwiperSlide key={index.toString()}>
+                    <div className="slider-item" style={{ backgroundImage: `url(${image})` }}></div>
+                </SwiperSlide>
+            ))}
         </Swiper>
     );
 };
@@ -53,7 +52,7 @@ const Hero2 = () => {
                     </Col>
                     <Col lg={5}>
                         <p className="fs-17 ps-0 ps-sm-4">
-                            No more conventional four-walled office. The fully comformtable seating solution for you.
+                            No more conventional four-walled office. The fully comfortable seating solution for you.
                         </p>
                     </Col>
                 </Row>
@@ -91,8 +90,7 @@ const Hero2 = () => {
                                                             <Col sm="auto">
                                                                 <button
                                                                     type="submit"
-                                                                    className="btn btn-orange my-1 my-sm-0"
-                                                                >
+                                                                    className="btn btn-orange my-1 my-sm-0">
                                                                     Find Space
                                                                 </button>
                                                             </Col>

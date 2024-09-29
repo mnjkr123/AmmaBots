@@ -10,11 +10,21 @@ import { VerticalForm, FormInput } from '../../components/form';
 import AuthLayout from './AuthLayout';
 import { toast } from 'react-toastify'; // For notifications
 
+// Adjusted UserData type
 type UserData = {
     exampleName: string;
     email: string;
     password: string;
 };
+
+// Adjusted Yup schema to properly validate UserData
+const schemaResolver = yupResolver(
+    yup.object({
+        exampleName: yup.string().required('Please enter Name'),
+        email: yup.string().email('Please enter a valid Email').required('Please enter Email'),
+        password: yup.string().required('Please enter Password'),
+    })
+);
 
 const SignUp = () => {
     const { t } = useTranslation();
@@ -22,21 +32,11 @@ const SignUp = () => {
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [formSubmitted, setFormSubmitted] = useState(false);
 
-    // Schema validation using Yup
-    const schemaResolver = yupResolver(
-        yup.object().shape({
-            exampleName: yup.string().required(t('Please enter Name')),
-            email: yup.string().required(t('Please enter Email')).email(t('Please enter valid Email')),
-            password: yup.string().required(t('Please enter Password')),
-        })
-    );
-
     const onSubmit = async (formData: UserData) => {
         if (isSubmitting) return; // Prevent multiple submissions
         setIsSubmitting(true);
 
         try {
-            // Register the user with Supabase authentication
             const { data, error: signupError } = await supabase.auth.signUp({
                 email: formData.email,
                 password: formData.password,
@@ -47,7 +47,6 @@ const SignUp = () => {
             const user = data?.user;
 
             if (user?.id) {
-                // Store additional user information in the 'profiles' table
                 const { error: profileError } = await supabase.from('profiles').upsert([
                     {
                         id: user.id,
@@ -64,20 +63,14 @@ const SignUp = () => {
                 console.warn('User ID is not available immediately after signup. Skipping profile update.');
             }
 
-            // Store the email in sessionStorage for confirmation
             sessionStorage.setItem('signupEmail', formData.email);
-            console.log('Stored email in sessionStorage:', formData.email); // Debug log
-
-            // Notify the user to check their email for verification
-            toast.success(t('Please check your email for verification.'));
-
-            // Indicate form has been submitted successfully
+            toast.success('Please check your email for verification.');
             setFormSubmitted(true);
         } catch (error) {
             console.error('Error during registration:', error);
             setError(`Error: ${(error as Error).message}`);
         } finally {
-            setIsSubmitting(false); // Reset the submitting state
+            setIsSubmitting(false);
         }
     };
 
