@@ -35,7 +35,6 @@
         "css-minimizer-webpack-plugin": "^3.2.0",
         "dotenv": "^10.0.0",
         "dotenv-expand": "^5.1.0",
-        "eslint": "^8.3.0",
         "eslint-config-react-app": "^7.0.0",
         "eslint-webpack-plugin": "^3.1.1",
         "feather-icons-react": "^0.5.0",
@@ -110,13 +109,6 @@
             "react-app/jest"
         ]
     },
-    "options": {
-        "allowedHosts": [
-            "localhost",
-            ".localhost"
-        ],
-        "proxy": "https://localhost:3000/"
-    },
     "browserslist": {
         "production": [
             ">0.2%",
@@ -130,13 +122,22 @@
         ]
     },
     "devDependencies": {
+        "@babel/preset-env": "^7.25.4",
+        "@babel/preset-react": "^7.24.7",
+        "@babel/preset-typescript": "^7.24.7",
         "@hookform/resolvers": "^3.9.0",
+        "@next/eslint-plugin-next": "^14.2.13",
         "@svgr/webpack": "^8.1.0",
         "@types/leaflet": "^1.7.9",
         "@types/node": "^22.7.4",
         "@types/react": "^18.3.10",
         "@types/react-dom": "^18.3.0",
         "@types/react-modal-image": "^2.6.3",
+        "@typescript-eslint/eslint-plugin": "^8.7.0",
+        "@typescript-eslint/parser": "^8.7.0",
+        "eslint": "^8.57.1",
+        "eslint-plugin-next": "^0.0.0",
+        "eslint-plugin-react": "^7.37.0",
         "next-svgr": "^0.0.2",
         "prettier": "2.5.1",
         "react-i18next": "^15.0.2",
