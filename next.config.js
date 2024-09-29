@@ -1,8 +1,4 @@
 // next.config.js
-const { createRequire } = require('module');
-const require = createRequire(import.meta.url); // Only needed if you are using ES modules
-
-// Import your desired configurations directly
 const withPlugins = require('next-compose-plugins'); // Example of using a plugin
 const nodePolyfillWebpackPlugin = require('node-polyfill-webpack-plugin'); // Example of importing a plugin
 
