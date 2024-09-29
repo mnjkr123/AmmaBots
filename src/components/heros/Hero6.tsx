@@ -6,7 +6,8 @@ import { Button, Col, Container, Row } from 'react-bootstrap';
 import { FormInput } from '../form';
 
 // images
-import coworking from 'assets/images/hero/coworking1.jpg';
+import coworking from 'assets/images/hero/coworking1.jpg'; // Update the path as needed
+import Image from 'next/image'; // Import Image from next/image
 
 const Hero6 = () => {
     return (
@@ -49,7 +50,14 @@ const Hero6 = () => {
                                 <div className="video-overlay d-flex align-items-center justify-content-center">
                                     <Link to="#" className="btn-play orange"></Link>
                                 </div>
-                                <img src={coworking} alt="" className="img-fluid shadow" />
+                                {/* Use the Image component here */}
+                                <Image
+                                    src={coworking}
+                                    alt="Coworking Space"
+                                    width={600} // Specify width
+                                    height={400} // Specify height
+                                    className="img-fluid shadow" // Maintain fluid class for responsiveness
+                                />
                             </div>
                         </div>
                     </Col>

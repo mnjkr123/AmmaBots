@@ -4,7 +4,8 @@ import { Button, ButtonGroup, Col, Container, Dropdown, Row } from 'react-bootst
 import FeatherIcon from 'feather-icons-react';
 
 // images
-import desktop from 'assets/images/hero/desktop.jpg';
+import desktop from 'assets/images/hero/desktop.jpg'; // Update the path as needed
+import Image from 'next/image'; // Import Image from next/image
 
 const Hero8 = () => {
     return (
@@ -17,8 +18,8 @@ const Hero8 = () => {
                             <span className="highlight highlight-warning d-inline-block">performance</span>
                         </h1>
                         <p className="fs-16 mt-3 text-muted">
-                            Prompt makes it easier to build better website and application more quickly and with less
-                            effort
+                            Prompt makes it easier to build better websites and applications more quickly and with less
+                            effort.
                         </p>
 
                         <div className="py-5">
@@ -53,7 +54,14 @@ const Hero8 = () => {
                     </Col>
                     <Col lg={{ span: 5, offset: 1 }} className="hero-right">
                         <div className="img-container" data-aos="fade-left" data-aos-duration="600">
-                            <img src={desktop} alt="desktop" />
+                            {/* Use the Image component here */}
+                            <Image
+                                src={desktop}
+                                alt="desktop"
+                                width={600} // Specify width
+                                height={400} // Specify height
+                                className="img-fluid" // Maintain fluid class for responsiveness
+                            />
                         </div>
                     </Col>
                 </Row>

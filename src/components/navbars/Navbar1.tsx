@@ -1,5 +1,4 @@
-import React from 'react';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import classNames from 'classnames';
 
@@ -12,6 +11,7 @@ import Menu from './Menu';
 // images
 import logo from '../../assets/images/logo.png';
 import logoLight from '../../assets/images/logo-light.png';
+import Image from 'next/image'; // Import the Image component
 
 type Navbar1Props = {
     isSticky?: boolean;
@@ -56,8 +56,8 @@ const Navbar1 = ({ isSticky, navClass, buttonClass, fixedWidth, hideSearch }: Na
                 className={classNames('topnav-menu', navClass)}>
                 <Container fluid={!fixedWidth}>
                     <Navbar.Brand href="/" className="logo">
-                        <img src={logo} height="30" className="align-top logo-dark" alt="" />
-                        <img src={logoLight} height="30" className="align-top logo-light" alt="" />
+                        <Image src={logo} height={30} className="align-top logo-dark" alt="Logo" />
+                        <Image src={logoLight} height={30} className="align-top logo-light" alt="Light Logo" />
                     </Navbar.Brand>
 
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />

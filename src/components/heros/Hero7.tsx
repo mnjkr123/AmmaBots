@@ -7,7 +7,8 @@ import Typist from 'react-text-typist';
 import { FormInput } from '../form';
 
 // images
-import crypto from 'assets/images/hero/crypto.jpg';
+import crypto from 'assets/images/hero/crypto.jpg'; // Update the path as needed
+import Image from 'next/image'; // Import Image from next/image
 
 const Hero7 = () => {
     return (
@@ -54,7 +55,14 @@ const Hero7 = () => {
                     </Col>
                     <Col lg={{ offset: 1, span: 5 }} className="hero-right">
                         <div className="img-container">
-                            <img src={crypto} alt="" />
+                            {/* Use the Image component here */}
+                            <Image
+                                src={crypto}
+                                alt="Cryptocurrency"
+                                width={600} // Specify width
+                                height={400} // Specify height
+                                className="img-fluid" // Maintain fluid class for responsiveness
+                            />
                         </div>
                     </Col>
                 </Row>
