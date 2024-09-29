@@ -2,6 +2,7 @@ import React from 'react';
 import { Card } from 'react-bootstrap';
 import { Autoplay, Navigation } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import Image from 'next/image'; // Import the Image component from Next.js
 
 // dummy data
 import { Slide } from './types';
@@ -45,17 +46,22 @@ const SwiperSlider2 = ({ slides, hasLogo }: SwiperSliderProps) => {
                                 <h4 className="fw-normal mb-3 mt-0">{slide.statement}</h4>
                                 <hr />
                                 <div className="d-flex pt-2 align-items-center">
-                                    <img
+                                    {/* Replace img with Image for the customer avatar */}
+                                    <Image
                                         src={slide.customer.avatar}
-                                        alt="avtar"
+                                        alt="avatar"
                                         className="me-2 rounded-circle"
-                                        height="36"
+                                        height={36}
+                                        width={36}
                                     />
                                     <div className="flex-grow-1">
                                         <h6 className="m-0">{slide.customer.name}</h6>
                                         <p className="my-0 text-muted fs-13">{slide.customer.designation}</p>
                                     </div>
-                                    {hasLogo && <img src={slide.logo} alt="logo" height="32" />}
+                                    {hasLogo && (
+                                        // Replace img with Image for the logo
+                                        <Image src={slide.logo} alt="logo" height={32} width={32} />
+                                    )}
                                 </div>
                             </Card.Body>
                         </Card>

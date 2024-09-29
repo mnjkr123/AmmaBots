@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import classNames from 'classnames';
+import Image from 'next/image'; // Import Image component
 
 // component
 import Menu from './Menu';
@@ -30,8 +31,15 @@ const Navbar4 = ({ isSticky, navClass, fixedWidth }: Navbar4Props) => {
                 className={classNames('topnav-menu', navClass)}>
                 <Container fluid={!fixedWidth}>
                     <Navbar.Brand href="/" className="logo">
-                        <img src={logo} height="30" className="align-top logo-dark" alt="" />
-                        <img src={logoLight} height="30" className="align-top logo-light" alt="" />
+                        {/* Replace img with Image component */}
+                        <Image src={logo} height={30} width={100} className="align-top logo-dark" alt="Logo" />
+                        <Image
+                            src={logoLight}
+                            height={30}
+                            width={100}
+                            className="align-top logo-light"
+                            alt="Light Logo"
+                        />
                     </Navbar.Brand>
 
                     <Navbar.Toggle className="me-3" aria-controls="topnav-menu-content4" />

@@ -2,6 +2,7 @@
 import React from 'react';
 import { Pagination, Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import Image from 'next/image'; // Import Image component
 
 // types
 import { Slide1 } from './types';
@@ -40,7 +41,15 @@ const SwiperSlider1 = ({ slides }: SwiperSliderProps) => {
                     <SwiperSlide key={index.toString()}>
                         <div className="row text-center">
                             <div className="col">
-                                <img src={slide.image} alt="" className="w-75" />
+                                {/* Replace img with Image component */}
+                                <Image
+                                    src={slide.image}
+                                    alt={slide.slideTitle}
+                                    className="w-75"
+                                    width={300}
+                                    height={200}
+                                    layout="responsive"
+                                />
                             </div>
                         </div>
                         <div className="row text-center my-4 pb-5">

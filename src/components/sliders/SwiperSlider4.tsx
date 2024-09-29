@@ -3,6 +3,7 @@ import FeatherIcon from 'feather-icons-react';
 import { Card } from 'react-bootstrap';
 import { Autoplay, Navigation, Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import Image from 'next/image'; // Import Image component
 
 // dummy data
 import { Slide } from './types';
@@ -33,11 +34,13 @@ const SwiperSlider4 = ({ slides }: SwiperSliderProps) => {
                             <Card.Body className="p-md-5">
                                 <p className="fw-normal mb-4 mt-0">{slide.statement}</p>
                                 <div className="d-flex text-align-start">
-                                    <img
+                                    {/* Replace img with Next.js Image component */}
+                                    <Image
                                         className="me-2 rounded-circle"
                                         src={slide.customer.avatar}
-                                        alt=""
-                                        height="36"
+                                        alt="Customer Avatar"
+                                        width={36}
+                                        height={36}
                                     />
                                     <div className="flex-grow-1">
                                         <h6 className="m-0">{slide.customer.name}</h6>

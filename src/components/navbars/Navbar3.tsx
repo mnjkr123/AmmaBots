@@ -1,8 +1,8 @@
-import React from 'react';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import { NavLink, Link } from 'react-router-dom';
 import classNames from 'classnames';
+import Image from 'next/image'; // Import Image from next/image
 
 // hooks
 import { useUser } from '../../hooks/auth';
@@ -55,7 +55,14 @@ const Navbar3 = ({ isSticky, navClass, buttonClass, fixedWidth }: Navbar3Props) 
                 className={classNames('topnav-menu', navClass)}>
                 <Container fluid={!fixedWidth}>
                     <Navbar.Brand href="/">
-                        <img src={logo} height="30" className="d-inline-block align-top" alt="" />
+                        {/* Replace <img> with <Image /> */}
+                        <Image
+                            src={logo} // Image source
+                            alt="Logo" // Alt text for accessibility
+                            height={30} // Specify height
+                            width={150} // Specify width (adjust accordingly)
+                            className="d-inline-block align-top"
+                        />
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">

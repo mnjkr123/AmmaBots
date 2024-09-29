@@ -1,7 +1,7 @@
-import React from 'react';
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Container, Nav, Navbar } from 'react-bootstrap';
 import classNames from 'classnames';
+import Image from 'next/image'; // Import Image component from Next.js
 
 // hooks
 import { useUser } from '../../hooks/auth';
@@ -15,12 +15,11 @@ import logo from '../../assets/images/logo.png';
 type Navbar2Props = {
     isSticky?: boolean;
     navClass?: string;
-    buttonClass?: string;
     fixedWidth?: boolean;
     hideSearch?: boolean;
 };
 
-const Navbar2 = ({ isSticky, navClass, buttonClass, fixedWidth, hideSearch }: Navbar2Props) => {
+const Navbar2 = ({ isSticky, navClass, fixedWidth, hideSearch }: Navbar2Props) => {
     const [loggedInUser] = useUser();
 
     // on scroll add navbar class and back to top button
@@ -56,7 +55,14 @@ const Navbar2 = ({ isSticky, navClass, buttonClass, fixedWidth, hideSearch }: Na
                 <Container fluid={!fixedWidth}>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" className="me-3" />
                     <Navbar.Brand href="/" className="me-lg-4 me-auto">
-                        <img src={logo} height="30" className="d-inline-block align-top" alt="" />
+                        {/* Replace <img> with <Image /> */}
+                        <Image
+                            src={logo} // Image source
+                            alt="Logo" // Alt text for accessibility
+                            height={30} // Specify height
+                            width={150} // Specify width
+                            className="d-inline-block align-top"
+                        />
                     </Navbar.Brand>
                     <Navbar.Collapse id="responsive-navbar-nav">
                         {!hideSearch && (

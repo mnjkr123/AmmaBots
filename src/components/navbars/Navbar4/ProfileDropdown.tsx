@@ -1,7 +1,7 @@
 import React from 'react';
-import React from 'react';
 import { Dropdown, Nav } from 'react-bootstrap';
 import FeatherIcon from 'feather-icons-react';
+import Image from 'next/image'; // Import Image component
 
 // images
 import user from 'assets/images/avatars/img-8.jpg';
@@ -19,7 +19,14 @@ const ProfileDropdown = ({ profileOptions }: ProfileProps) => {
             <Dropdown.Toggle as={Nav.Link} id="user">
                 <div className="d-flex align-items-center">
                     <div className="flex-shrink-0">
-                        <img src={user} alt="user" className="avatar avatar-xs rounded-circle me-2" />
+                        {/* Replace img with Image component */}
+                        <Image
+                            src={user} // Image source
+                            alt="user" // Alt text for accessibility
+                            className="avatar avatar-xs rounded-circle me-2" // Existing classes
+                            height={30} // Set the height of the image
+                            width={30} // Set the width of the image
+                        />
                     </div>
                     <div className="flex-grow-1 ms-1 lh-base">
                         <span className="fw-semibold fs-13 d-block line-height-normal">Greeva N</span>

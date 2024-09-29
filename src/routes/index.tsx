@@ -15,7 +15,6 @@ const Logout = React.lazy(() => import('../pages/auth/Logout'));
 
 // home
 const Home = React.lazy(() => import('../pages/Home'));
-const Service = React.lazy(() => import('../pages/landings/Service'));
 const Chatbot = React.lazy(() => import('../pages/landings/Chatbot'));
 
 // landings
@@ -87,20 +86,14 @@ const AllRoutes = () => {
                     path: 'home',
                     element: <LoadComponent component={Home} />,
                 },
-                {
-                    path: 'service',
-                    element: <LoadComponent component={Service} />,
-                },
+                {},
                 {
                     path: 'Chatbot',
                     element: <LoadComponent component={Chatbot} />,
                 },
                 {
                     path: 'landing',
-                    children: [
-                        { path: 'service', element: <LoadComponent component={Service} /> },
-                        { path: 'service', element: <LoadComponent component={Service} /> },
-                    ],
+                    children: [],
                 },
                 {
                     path: 'pages',

@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 // swiper
 import { Autoplay } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
+import Image from 'next/image'; // Import Image component
 
 // images
 import saas1 from 'assets/images/hero/saas1.jpg';
@@ -36,7 +37,14 @@ const SwiperSlider3 = () => {
                             <div className="video-overlay d-flex align-items-center justify-content-center">
                                 <Link to="#" className="btn-play success"></Link>
                             </div>
-                            <img src={img} alt="" className="img-fluid rounded-lg" />
+                            {/* Replace img with Image component */}
+                            <Image
+                                src={img}
+                                alt={`Slide ${index + 1}`}
+                                className="img-fluid rounded-lg"
+                                width={1200} // Provide appropriate width based on the design
+                                height={675} // Provide appropriate height based on the design
+                            />
                         </div>
                     </SwiperSlide>
                 );
