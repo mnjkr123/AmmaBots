@@ -20,24 +20,11 @@ const Chatbot = React.lazy(() => import('../pages/landings/Chatbot'));
 
 // landings
 
-const Startup = React.lazy(() => import('../pages/landings/Startup'));
-const Software = React.lazy(() => import('../pages/landings/Software'));
 // pages
 const Dashboard = React.lazy(() => import('../pages/other/account/Dashboard'));
 
-const Blog = React.lazy(() => import('../pages/other/Blog'));
-const BlogPost = React.lazy(() => import('../pages/other/BlogPost'));
-
-const Company = React.lazy(() => import('../pages/other/Company'));
 const Contact = React.lazy(() => import('../pages/other/Contact'));
-const Career = React.lazy(() => import('../pages/other/Career'));
 const Pricing = React.lazy(() => import('../pages/other/Pricing'));
-
-const PortfolioGrid = React.lazy(() => import('../pages/other/portfolio/PortfolioGrid'));
-const PortfolioMasonry = React.lazy(() => import('../pages/other/portfolio/PortfolioMasonry'));
-const PortfolioItem = React.lazy(() => import('../pages/other/portfolio/PortfolioItem'));
-
-const HelpDesk = React.lazy(() => import('../pages/other/HelpDesk'));
 
 // docs
 const Introduction = React.lazy(() => import('../pages/docs/Introduction'));
@@ -46,13 +33,6 @@ const Customization = React.lazy(() => import('../pages/docs/Customization'));
 const Routing = React.lazy(() => import('../pages/docs/Routing'));
 const CodeSpliting = React.lazy(() => import('../pages/docs/CodeSpliting'));
 const ChangeLog = React.lazy(() => import('../pages/docs/ChangeLog'));
-
-const Colors = React.lazy(() => import('../pages/docs/Colors'));
-const Typography = React.lazy(() => import('../pages/docs/Typography'));
-
-const Bootstrap = React.lazy(() => import('../pages/docs/Bootstrap'));
-const Custom = React.lazy(() => import('../pages/docs/Custom'));
-const Plugins = React.lazy(() => import('../pages/docs/Plugins'));
 
 const Navbars = React.lazy(() => import('../pages/docs/Navbars'));
 const Heros = React.lazy(() => import('../pages/docs/Heros'));
@@ -99,12 +79,6 @@ const AllRoutes = () => {
                         { path: 'routing', element: <LoadComponent component={Routing} /> },
                         { path: 'code-spliting', element: <LoadComponent component={CodeSpliting} /> },
                         { path: 'change-log', element: <LoadComponent component={ChangeLog} /> },
-
-                        { path: 'colors', element: <LoadComponent component={Colors} /> },
-                        { path: 'typography', element: <LoadComponent component={Typography} /> },
-                        { path: 'bootstrap', element: <LoadComponent component={Bootstrap} /> },
-                        { path: 'custom', element: <LoadComponent component={Custom} /> },
-                        { path: 'plugins', element: <LoadComponent component={Plugins} /> },
                         { path: 'navbars', element: <LoadComponent component={Navbars} /> },
                         { path: 'heros', element: <LoadComponent component={Heros} /> },
                     ],
@@ -124,8 +98,6 @@ const AllRoutes = () => {
                 {
                     path: 'landing',
                     children: [
-                        { path: 'startup', element: <LoadComponent component={Startup} /> },
-                        { path: 'software', element: <LoadComponent component={Software} /> },
                         { path: 'service', element: <LoadComponent component={Service} /> },
                         { path: 'service', element: <LoadComponent component={Service} /> },
                     ],
@@ -135,24 +107,14 @@ const AllRoutes = () => {
                     children: [
                         {
                             path: 'blog',
-                            children: [
-                                { path: '', element: <LoadComponent component={Blog} /> },
-                                { path: 'post', element: <LoadComponent component={BlogPost} /> },
-                            ],
+                            children: [],
                         },
-                        { path: 'company', element: <LoadComponent component={Company} /> },
                         { path: 'contact', element: <LoadComponent component={Contact} /> },
-                        { path: 'career', element: <LoadComponent component={Career} /> },
                         { path: 'pricing', element: <LoadComponent component={Pricing} /> },
                         {
                             path: 'portfolio',
-                            children: [
-                                { path: 'grid', element: <LoadComponent component={PortfolioGrid} /> },
-                                { path: 'masonry', element: <LoadComponent component={PortfolioMasonry} /> },
-                                { path: 'item', element: <LoadComponent component={PortfolioItem} /> },
-                            ],
+                            children: [],
                         },
-                        { path: 'help', element: <LoadComponent component={HelpDesk} /> },
                     ],
                 },
             ],

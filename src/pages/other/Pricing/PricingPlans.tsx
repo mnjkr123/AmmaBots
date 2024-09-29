@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { Badge, Col, Container, Row } from 'react-bootstrap';
 
 // components

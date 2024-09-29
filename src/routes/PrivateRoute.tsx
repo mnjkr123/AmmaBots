@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { Suspense } from 'react';
 import { Navigate, useLocation, Outlet } from 'react-router-dom';
 

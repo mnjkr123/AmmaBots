@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { Button, Card, Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import GoogleMapReact from 'google-map-react';
@@ -30,7 +32,7 @@ const ContactUs = () => {
     } = methods;
 
     // handle form submission
-    const onSubmit = () => { };
+    const onSubmit = () => {};
 
     return (
         <section className="section pb-lg-7 py-4 position-relative">

@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { Card, Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 
@@ -16,8 +18,7 @@ const CTA = () => {
                         <Card
                             className="shadow-none border mb-lg-0 rounded-sm"
                             data-aos="fade-up"
-                            data-aos-duration="500"
-                        >
+                            data-aos-duration="500">
                             <Card.Body>
                                 <h3 className="mt-0 fw-semibold">Get in touch</h3>
                                 <p>
@@ -34,8 +35,7 @@ const CTA = () => {
                         <Card
                             className="shadow-none border mb-0 rounded-sm"
                             data-aos="fade-up"
-                            data-aos-duration="1000"
-                        >
+                            data-aos-duration="1000">
                             <Card.Body>
                                 <h3 className="mt-0 fw-semibold">Explore Knowledge Base</h3>
                                 <p>

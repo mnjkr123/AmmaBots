@@ -1,4 +1,6 @@
 // types
+import React from 'react';
+
 import { PlanItem } from 'components/pricing';
 import { Benefit } from '../Career/types';
 

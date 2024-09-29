@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { Card } from 'react-bootstrap';
 import FeatherIcon from 'feather-icons-react';
 import classNames from 'classnames';
@@ -23,8 +25,7 @@ const StatWidget = ({ icon, variant, stats, title }: StatWidgetProps) => {
                             'icon-with-bg',
                             'rounded-sm',
                             'me-3'
-                        )}
-                    >
+                        )}>
                         <FeatherIcon icon={icon} className={classNames('icon-dual-' + variant)} />
                     </div>
                     <div className="flex-grow-1">

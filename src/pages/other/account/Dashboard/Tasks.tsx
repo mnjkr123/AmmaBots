@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { Link } from 'react-router-dom';
 import { Badge, Button, Card, Col, Form, Row, Spinner } from 'react-bootstrap';
 import FeatherIcon from 'feather-icons-react';
@@ -69,8 +71,7 @@ const Tasks = ({ tasks }: TasksProps) => {
                                                                 { 'badge-soft-info': task.priority === 'Medium' },
                                                                 { 'badge-soft-success': task.priority === 'Low' },
                                                                 'p-1'
-                                                            )}
-                                                        >
+                                                            )}>
                                                             {task.priority}
                                                         </Badge>
                                                     </li>

@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { Badge, Col, Container, Row } from 'react-bootstrap';
 import FeatherIcon from 'feather-icons-react';
 
@@ -28,8 +30,7 @@ const Benefits = ({ benefits }: BenefitsProps) => {
                                 lg={6}
                                 key={index.toString()}
                                 data-aos="fade-up"
-                                data-aos-duration={(index + (3 + index)) * 100}
-                            >
+                                data-aos-duration={(index + (3 + index)) * 100}>
                                 <div className="d-flex align-items-top pe-sm-5 mt-lg-5 mt-4">
                                     <span className="bg-soft-primary avatar avatar-md rounded icon icon-with-bg icon-sm text-primary me-4 flex-shrink-0">
                                         <FeatherIcon icon={benefit.icon} className="icon-dual-primary" />

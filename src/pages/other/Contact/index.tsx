@@ -1,4 +1,6 @@
 // components
+import React from 'react';
+
 import { Navbar1 } from 'components/navbars';
 import BackToTop from 'components/BackToTop';
 import { Footer2 } from 'components/footer';

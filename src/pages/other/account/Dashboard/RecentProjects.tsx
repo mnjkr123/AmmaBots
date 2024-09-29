@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { Link } from 'react-router-dom';
 import { Badge, Card, Col, Dropdown, ProgressBar, Row } from 'react-bootstrap';
 import FeatherIcon from 'feather-icons-react';
@@ -42,8 +44,7 @@ const ReecentProjects = ({ projects }: RecentProjectsProps) => {
                                                         as={Link}
                                                         to="#"
                                                         id="dropdownMenuLink-1"
-                                                        className="btn-link text-muted p-0"
-                                                    >
+                                                        className="btn-link text-muted p-0">
                                                         <FeatherIcon icon="more-horizontal" className="icon icon-xs" />
                                                     </Dropdown.Toggle>
                                                     <Dropdown.Menu>
@@ -74,8 +75,7 @@ const ReecentProjects = ({ projects }: RecentProjectsProps) => {
                                             </h4>
                                             <Badge
                                                 bg=""
-                                                className={classNames('mb-1', 'badge-soft-' + project.state.variant)}
-                                            >
+                                                className={classNames('mb-1', 'badge-soft-' + project.state.variant)}>
                                                 {project.state.name}
                                             </Badge>
                                             <p className="text-muted fs-14 mt-3">{project.description}</p>
@@ -107,8 +107,7 @@ const ReecentProjects = ({ projects }: RecentProjectsProps) => {
                                                             <Link
                                                                 to="#"
                                                                 className="avatar-group-item mb-0"
-                                                                key={index.toString()}
-                                                            >
+                                                                key={index.toString()}>
                                                                 <img
                                                                     src={member}
                                                                     alt="member"

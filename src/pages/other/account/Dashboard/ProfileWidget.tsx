@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { Link } from 'react-router-dom';
 import { Card, Col, Dropdown, ProgressBar, Row } from 'react-bootstrap';
 import FeatherIcon from 'feather-icons-react';
@@ -26,8 +28,7 @@ const ProfileWidget = () => {
                                     as={Link}
                                     to="#"
                                     id="dropdownMenuLink-1"
-                                    className="btn-link text-muted p-0"
-                                >
+                                    className="btn-link text-muted p-0">
                                     <FeatherIcon icon="more-horizontal" className="icon icon-xs" />
                                 </Dropdown.Toggle>
                                 <Dropdown.Menu>
