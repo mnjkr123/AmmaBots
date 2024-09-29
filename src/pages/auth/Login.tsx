@@ -1,15 +1,15 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { Button, Row, Col, Alert } from 'react-bootstrap';
-import { useForm } from 'react-hook-form';
+import { useForm, SubmitHandler } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import { useTranslation } from 'react-i18next';
 import FeatherIcon from 'feather-icons-react';
-import { supabase } from '../../helpers/supabaseClient'; // Adjust path to your Supabase client
+import { supabase } from '../../helpers/supabaseClient';
 import { VerticalForm, FormInput } from '../../components/form';
 import AuthLayout from './AuthLayout';
-import { APICore, setAuthorization } from '../../helpers/api/apiCore'; // Import APICore
+import { APICore, setAuthorization } from '../../helpers/api/apiCore';
 
 // Initialize apiCore
 const api = new APICore();
@@ -20,10 +20,12 @@ const schema = yup.object().shape({
     password: yup.string().required('Please enter your password'),
 });
 
-type UserData = {
+// Define the UserData type
+interface UserData {
     email: string;
     password: string;
-};
+    remember?: boolean; // Optional remember field
+}
 
 const Login = (): React.ReactElement => {
     const { t } = useTranslation();
@@ -31,15 +33,16 @@ const Login = (): React.ReactElement => {
 
     // Form handling using react-hook-form and yup for validation
     const {
+        register,
         formState: { errors },
+        handleSubmit, // Ensure this is used in the form submission
     } = useForm<UserData>({
         resolver: yupResolver(schema),
     });
 
     // Function to handle form submission
-    const onSubmit = async (data: UserData) => {
+    const onSubmit: SubmitHandler<UserData> = async (data) => {
         try {
-            // Call Supabase's signInWithPassword method
             const {
                 data: { session, user },
                 error,
@@ -50,29 +53,20 @@ const Login = (): React.ReactElement => {
 
             if (error) {
                 console.error('Login error:', error.message);
-                // Handle login error (display error message, etc.)
                 return;
             }
 
             if (session) {
-                // Store both user info and the access token globally
-                const accessToken = session.access_token; // Correctly access the access token
-
-                // Set logged-in user session via APICore, including the email
+                const accessToken = session.access_token;
                 api.setLoggedInUser({
-                    user: { ...user, email: data.email }, // Add email to the user object
+                    user: { ...user, email: data.email },
                     token: accessToken,
                 });
-
-                // Set token for future requests
                 setAuthorization(accessToken);
-
-                // Redirect to /Service on successful login
                 navigate('/Service');
             }
         } catch (error) {
             console.error('Error during login:', error);
-            // Handle other errors (network issues, etc.)
         }
     };
 
@@ -90,27 +84,26 @@ const Login = (): React.ReactElement => {
             <h6 className="h5 mb-0 mt-3">{t('Welcome back!')}</h6>
             <p className="text-muted mt-1 mb-4">{t('Enter your email address and password to access AI Features')}</p>
 
-            {errors.email && (
+            {/* Display validation errors */}
+            {(errors.email || errors.password) && (
                 <Alert variant="danger" className="mb-3">
-                    {errors.email.message}
-                </Alert>
-            )}
-            {errors.password && (
-                <Alert variant="danger" className="mb-3">
-                    {errors.password.message}
+                    {errors.email?.message || errors.password?.message}
                 </Alert>
             )}
 
             {/* Form component to handle login */}
-            <VerticalForm<UserData> onSubmit={onSubmit} resolver={yupResolver(schema)}>
+            <VerticalForm<UserData> onSubmit={handleSubmit(onSubmit)}>
+                {' '}
+                {/* Use handleSubmit here */}
                 <FormInput
                     type="email"
                     name="email"
                     label={t('Email')}
                     placeholder={t('Email')}
                     containerClass={'mb-3'}
+                    register={register}
+                    errors={errors} // Pass errors to FormInput if it accepts it
                 />
-
                 <FormInput
                     label={t('Password')}
                     type="password"
@@ -122,6 +115,8 @@ const Login = (): React.ReactElement => {
                         </Link>
                     }
                     containerClass={'mb-3'}
+                    register={register}
+                    errors={errors} // Pass errors to FormInput if it accepts it
                 />
                 <FormInput
                     type="checkbox"
@@ -129,8 +124,8 @@ const Login = (): React.ReactElement => {
                     label={t('Remember me')}
                     containerClass={'mb-3'}
                     defaultChecked
+                    register={register}
                 />
-
                 <div className="mb-0 text-center d-grid">
                     <Button type="submit">{t('Log In')}</Button>
                 </div>

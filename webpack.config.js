@@ -1,32 +1,41 @@
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin'); // Note the capitalization
+require('babel-register');
+
 module.exports = {
-    // ... your existing configuration
-    resolve: {
-        fallback: {
-            fs: false,
-            child_process: false,
-            os: require.resolve('os-browserify/browser'),
-            path: require.resolve('path-browserify'),
-            querystring: require.resolve('querystring-es3'),
-            stream: require.resolve('stream-browserify'),
-            // Add @svgr/webpack if needed
-            '@svgr/webpack': require.resolve('@svgr/webpack'),
-        },
+    entry: ['@babel/polyfill', './src/app.js'],
+    output: {
+        path: path.resolve(__dirname, 'dist'),
+        filename: 'bundle.js',
+        clean: true, // Optional: Cleans the output directory before each build
     },
-    // Ensure that you have a module rule for .svg files
     module: {
         rules: [
             {
-                test: /\.svg$/,
-                use: [
-                    {
-                        loader: '@svgr/webpack',
-                        options: {
-                            // You can add any options you want for the SVGR loader here
-                        },
-                    },
-                ],
+                test: /\.js$/,
+                exclude: /node_modules/,
+                use: {
+                    loader: 'babel-loader',
+                },
             },
         ],
     },
-    // ...
+    plugins: [
+        new HtmlWebpackPlugin({
+            template: './index.html',
+            filename: 'index.html',
+        }),
+    ],
+    mode: 'development',
+    devtool: 'inline-source-map',
+    devServer: {
+        static: {
+            directory: path.resolve(__dirname, 'public/'),
+        },
+        proxy: {
+            '/api': 'http://localhost:3000',
+        },
+        hot: true, // Changed to true for full hot module replacement
+        historyApiFallback: true, // Optional: use this if you're using React Router
+    },
 };
