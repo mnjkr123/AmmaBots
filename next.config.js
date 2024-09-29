@@ -1,3 +1,5 @@
+const NodePolyfillPlugin = require('node-polyfill-webpack-plugin');
+
 module.exports = {
     webpack: (config) => {
         config.resolve.fallback = {
@@ -8,6 +10,10 @@ module.exports = {
             querystring: require.resolve('querystring-es3'),
             stream: require.resolve('stream-browserify'),
         };
+
+        // Add the NodePolyfillPlugin to the webpack plugins
+        config.plugins.push(new NodePolyfillPlugin());
+
         return config;
     },
 };
